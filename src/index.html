@@ -1,24 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
-    <load ="partials/header.html" />
+    <title>Car Fix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+        integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aSs5IBVTN5Jq4sUCn8E+2EhMUfWdz0ynKQz54ixzCqVd+hHR9l6QFrFivt4LzoC" crossorigin="anonymous"> -->
 
-    <section>
-      <h1>Lorem ipsum dolor sit amet.</h1>
-      <!-- Path to images as from index.html file -->
-      <img src="./img/javascript.svg" alt="" />
-    </section>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="./css/styles.css" />
+</head>
 
-    <!-- Loads the specified .html file -->
-    <load ="partials/vite-promo.html" />
+<body>
+        <!--Header section-->
+        <header class="header">
+        
+            <div class="header-inner container">
+        
+                <div class="logo-wrap">
+                    <a class="logo" href="./index.html">
+                        <svg class="logo-icon" width="100" height="26">
+                            <use href="./img/icons.svg#icon-logo"></use>
+                        </svg>
+                    </a>
+                    <h2>CARFIX</h2>
+                    <h3>PDR EXPERT</h3>
+                </div>
+        
+                <button class="mobile-menu-toggle">
+                    <svg class="mob-menu-icon" width="38" height="38">
+                        <use href="./img/icons.svg#icon-mob-menu">
+                        </use>
+                    </svg>
+                </button>
+            </div>
+        </header>
 
-    <script type="module" src="./main.js"></script>
-  </body>
+        <!--Hero section-->
+        <section class="hero-section">
+        
+            <div class="hero-box container">
+        
+                <div class="hero-inner">
+                  <div class="hero-title">
+                    <h1>Видалення вм’ятин</h1>
+                    <h2>без пофарбування</h2>
+                  </div>
+                    <p>Від 30 хв</p>
+                    <p class="hero-text">Швидка безкоштовна консультація, попередня оцінка пошкоджень по фото та запису на послугу.</p>
+        
+                    <button class="button-primary" type="button" data-modal-open>Безкоштовна консультація</button>
+                </div>
+            </div>
+        
+        </section>
+
+        <!--Why us section-->
+        <section class="advantage-section section">
+            
+            <div class="container">
+            
+            <h2 class="advantage-title">Чому ми?</h2>
+            
+                <ul class="advantage-list">
+                    <li class="advantage-block">
+                            <svg class="advantage-icon" width="86" height="86">
+                                <use href="./img/icons.svg#icon-man"></use>
+                            </svg>
+                        <button class="advantage-button" type="button" data-modal-open>Безкоштовна оцінка вартості послуг PDR</button>
+                    </li>
+                    <li class="advantage-block">
+                            <svg class="advantage-icon" width="86" height="86">
+                                <use href="./img/icons.svg#icon-note"></use>
+                            </svg>
+                        <button class="advantage-button" type="button" data-modal-open>Сертифіковані майстри з досвідом 10+ років</button>
+                    </li>
+                    <li class="advantage-block">
+                            <svg class="advantage-icon" width="86" height="86">
+                                <use href="./img/icons.svg#icon-instruments"></use>
+                            </svg>
+                        <button class="advantage-button" type="button" data-modal-open>Професійне обладнання та матеріали</button>
+                    </li>
+                    <li class="advantage-block">
+                            <svg class="advantage-icon" width="86" height="86">
+                                <use href="./img/icons.svg#icon-calendar"></use>
+                            </svg>
+                        <button class="advantage-button" type="button" data-modal-open>Чіткі терміни на виконання робіт</button>
+                    </li>
+                </ul>
+            
+            
+            </div>
+        </section>
+
+        <!--Technology PDR section-->
+        <section class="technology-section container">
+
+            <div class="technology-pic">
+              <picture class="technology-pic">
+                <source class="portfolio-photo" media="(max-width: 767.98px)"
+                    srcset="./img/technologyPDR/tech_mob.jpg 1x, ./img/technologyPDR/tech_mob@2x.jpg 2x" width="342" height="446">
+                <source class="portfolio-photo" media="(min-width: 768px)"
+                    srcset="./img/technologyPDR/tech_tab.jpg 1x, ./img/technologyPDR/tech_tab@2x.jpg 2x" width="470" height="800">
+                <source class="portfolio-photo" media="(min-width: 1158px)"
+                    srcset="./img/technologyPDR/tech_desk.jpg 1x, ./img/technologyPDR/tech_desk@2x.jpg 2x" width="662" height="770">
+        
+                <img class="portfolio-photo" src="./img/services/serv1_desk@2x.jpg" alt="Видалення вмятин без пофарбування" width="360">
+            </picture>
+            </div>
+
+            <div class="technology-text">
+        <p><span>Технологія PDR</span> - це сучасний та комплексний підхід до виправлення дефектів кузова, спричиненого різними чинниками.</p>
+        <h3>Основні причини вм'ятин:</h3>
+        <ul>
+            <li>Погодні умови (град, сніг)</li>
+            <li>Падіння з дерев різних плодів (горіхи, каштани, жолуді, яблука тощо)</li>
+            <li>Різноманітні викиди з поверхонь доріг щебеню, гравію та інших дрібних твердих предметів</li>
+            <li>Невдале паркування</li>
+            <li>Автомобільна аварія (ДТП)</li>
+
+        </ul>
+        <p>Завдяки технології PDR та спеціальному інструменту, ми можемо видалити вм'ятини різної складності на кузові автомобіля без фарбування деталей за умови, що на автомобілі не постраждало лако фарбувальне покриття.</p>
+            </div>
+
+        </section>
+
+        <!--Services section-->
+        <section class="servises-section">
+
+            <div class="container">
+                
+                <h2>Послуги</h2>
+
+                <ul>
+                    <li>
+                        <div class="service-image">
+                        
+                            <picture>
+                                <source media="(max-width: 767.98px)"
+                                    srcset="./img/services/serv1_mob.jpg. 1x, ./img/services/serv1_mob@2x.jpg 2x" width="343" height="418">
+                                <source media="(min-width: 768px)"
+                                    srcset="./img/services/serv1_tab.jpg. 1x, ./img/services/serv1_tab@2x.jpg 2x" width="840" height="600">
+                                <source media="(min-width: 1158px)"
+                                    srcset="./img/services/serv1_desk.jpg. 1x, ./img/services/serv1_desk@2x.jpg 2x" width="600" height="600">
+                        
+                                <img class="portfolio-photo" src="./img/services/serv1_desk@2x.jpg" alt="Видалення вмятин без пофарбування" width="360">
+                            </picture>
+                            <h3>Видалення вмятин без пофарбування</h3>
+                            
+                            <div class="servivce-overlay">
+                                <h3>Переваги технології PDR:</h3>
+                                <ul>
+                            
+                                    <li>Без фарбування</li>
+                                    <li>Без зварювання</li>
+                                    <li>Без рихтування</li>
+                                    <li>Без заміни деталей кузова</li>
+                                    <li>Тривалість робіт від 30 хвилин</li>
+                                    <li>Безкоштовна оцінка вартості робіт</li>
+                            
+                                </ul>
+                            
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                            <picture>
+                                <source media="(max-width: 767.98px)"
+                                    srcset="./img/services/serv2_mob.jpg. 1x, ./img/services/serv2_mob@2x.jpg 2x" width="343" height="418">
+                                <source media="(min-width: 768px)"
+                                    srcset="./img/services/serv2_tab.jpg. 1x, ./img/services/serv2_tab@2x.jpg 2x" width="852" height="600">
+                                <source media="(min-width: 1158px)"
+                                    srcset="./img/services/serv2_desk.jpg. 1x, ./img/services/serv2_desk@2x.jpg 2x" width="600" height="600">
+                        
+                                <img class="portfolio-photo" src="./img/services/serv2_desk@2x.jpg" alt="Полірування Авто" width="360">
+                            </picture>
+                            <h3>Полірування Авто</h3>
+                            
+                            <ul>
+                                <li>
+                                    <h3>Захисне полірування авто</h3>
+                                    <p>Проводиться для захисту лакофарбового покриття авто з метою його додаткового захисту від впливузовнішніх негативних
+                                    факторів. Застосовуються поліролі, що не містять абразивних матеріалів. Рекомендується виконувати кілька разів на рік.</p>
+                                </li>
+                                <li>
+                                    <h3>Відновлювальне полірування авто</h3>
+                                    <p>Виконується для усунення шкоди, завданої лакофарбувальному покриттю. Застосовуються поліролі на абразивній основі. По
+                                    закінченню відновної обробки виконується захисне полірування.</p>
+                                </li>
+
+                            </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+        <!--Our masters section-->
+
+        <section>
+            <div class="container">
+                <h2>Наші майстри</h2>
+
+                <div>
+                    <picture>
+                        <source media="(max-width: 767.98px)"
+                            srcset="./img/masters/master_mob.jpg 1x, ./img/masters/master_mob@2x.jpg 2x" width="342" height="418">
+                        <source media="(min-width: 768px)"
+                            srcset="./img/masters/master_tab.jpg 1x, ./img/masters/master_tab@2x.jpg 2x" width="470" height="800">
+                        <source media="(min-width: 1158px)"
+                            srcset="./img/masters/master_desk.jpg 1x, ./img/masters/master_desk@2x.jpg 2x" width="622" height="688">
+                    
+                        <img class="portfolio-photo" src="./img/masters/master_desk@2x.jpg" alt="Фото майстра Кучер Євгенія" width="360">
+                    </picture>
+
+                    <h2>Кучер Євгеній</h2>
+                    <ul>
+                        <li>Дворазовий чемпіон України з видалення вм’ятин 2017 та 2019 років (AS PDR -Extreme olimpics 2017 and 2019)</li>
+                        <li>Досвід роботи більше 10 років.</li>
+                        <li>Засновник та ментор курсу PDR-Expert.</li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!--Study section-->
+        <section class="study-section">
+
+            <div class="container">
+
+                <picture>
+                    <source media="(max-width: 767.98px)"
+                        srcset="./img/study/course_mob.jpg 1x, ./img/study/course_mob@2x.jpg 2x" width="343" height="418">
+                    <source media="(min-width: 768px)"
+                        srcset="./img/study/course_tab.jpg 1x, ./img/study/course_tab@2x.jpg 2x" width="470" height="800">
+                    <source media="(min-width: 1158px)"
+                        srcset="./img/study/course_desk.jpg 1x, ./img/study/course_desk@2x.jpg 2x" width="622"
+                        height="628">
+                
+                    <img class="portfolio-photo" src="./img/study/course_desk@2x.jpg" alt="Фото майстра Кучер Євгенія" width="360">
+                </picture>
+
+                <div>
+                    <p>Авторський курс навчання видаленню вм'ятин  “PDR Expert”.</p>
+                        <p>До курсу входить:</p>
+                        <ul>
+                            <li>Робота крючками</li>
+                            <li>Клейова система</li>
+                            <li>Робота Молотками</li>
+                            <li>Робота зі світлом та напівсферою</li>
+
+                        </ul>
+
+                        <button type="button">Детальніше</button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--Gallery section-->
+
+        <section class="gallery-section">
+            <div class="container">
+            <h2>Галерея</h2>
+            </div>
+        </section>
+
+        <!--Footer section-->
+        <section class="footer-section">
+            <div class="container">
+                <h2>Контакти</h2>
+                <div>
+                    <h3>Графік роботи:</h3>
+                    <ul>
+                        <li>ПН-ПТ: з 09:00 до 19:00</li>
+                        <li>СБ-НД: вихідний</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <script type="module" src="./main.js"></script>
+
+      </body>
+
 </html>
