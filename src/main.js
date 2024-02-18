@@ -1,1 +1,1 @@
-import 'bootstrap';
+import './js/burger-menu'

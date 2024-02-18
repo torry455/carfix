@@ -1,5 +1,5 @@
 .header {
-  padding: 20px 0;
+  padding: 16px;
 }
 
 .nav-list {
@@ -18,4 +18,35 @@
 .nav-link:hover,
 .nav-link:focus {
   color: #747bff;
+}
+
+.logo-wrapper {
+  max-height: 54px;
+  position: relative;
+}
+
+.mob-menu-icon {
+  position: absolute;
+}
+
+.burger-menu-btn {
+  display: block;
+}
+
+.burger-menu-btn button {
+  /* background-color: transparent; */
+  display: block;
+  border: none;
+  cursor: pointer;
+  /* padding: 5px; */
+
+  width: 38px; /* Змініть розмір іконки за потребою */
+  height: 38px;
+}
+
+.burger-menu-btn .icon {
+  /* Стилі для іконки */
+  width: 38px; /* Змініть розмір іконки за потребою */
+  height: 38px;
+  fill: var(--c-primary-light); /* Змініть колір за потребою */
 }
