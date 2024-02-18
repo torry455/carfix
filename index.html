@@ -18,36 +18,42 @@
         rel="stylesheet">
         
   <script type="module" crossorigin src="/carfix/commonHelpers.js"></script>
-  <link rel="modulepreload" crossorigin href="/carfix/assets/vendor-a83ed21d.js">
-  <link rel="stylesheet" href="/carfix/assets/index-31bb9f92.css">
+  <link rel="stylesheet" href="/carfix/assets/index-68ecc044.css">
 </head>
 
 <body>
-        <!--Header section-->
+
+
+            <!--Header section-->
         <header class="header">
         
-            <div class="header-inner container">
-        
-                <div class="logo-wrap">
-                    <a class="logo" href="./index.html">
-                        <svg class="logo-icon" width="100" height="26">
-                            <use href="/carfix/assets/icons-1deec429.svg#icon-logo"></use>
-                        </svg>
-                    </a>
-                    <h2>CARFIX</h2>
-                    <h3>PDR EXPERT</h3>
-                </div>
-        
-                <button class="mobile-menu-toggle">
-                    <svg class="mob-menu-icon" width="38" height="38">
-                        <use href="/carfix/assets/icons-1deec429.svg#icon-mob-menu">
-                        </use>
-                    </svg>
-                </button>
-            </div>
-        </header>
+          <div class="header-inner">
+      
+              <div class="logo-wrap">
+                  <a class="logo" href="./index.html">
+                      <svg class="logo-icon" width="100" height="26">
+                          <use href="./img/icons.svg#icon-logo"></use>
+                      </svg>
+                  </a>
+                  <h2>CARFIX</h2>
+                  <h3>PDR EXPERT</h3>
+              </div>
 
-        <!--Hero section-->
+                    <button class="header-menu-btn js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+                  <svg class="icon-menu" width="38" height="38">
+                      <use href="./img/icons.svg#icon-mob-menu">
+                      </use>
+                  </svg>
+              </button>
+
+
+          </div>
+      </header>
+
+
+
+
+            <!--Hero section-->
         <section class="hero-section">
         
             <div class="hero-box container">
@@ -65,45 +71,44 @@
             </div>
         
         </section>
-
-        <!--Why us section-->
+            <!-- Why us section-->
         <section class="advantage-section section">
             
-            <div class="container">
-            
-            <h2 class="advantage-title">Чому ми?</h2>
-            
-                <ul class="advantage-list">
-                    <li class="advantage-block">
-                            <svg class="advantage-icon" width="86" height="86">
-                                <use href="/carfix/assets/icons-1deec429.svg#icon-man"></use>
-                            </svg>
-                        <button class="advantage-button" type="button" data-modal-open>Безкоштовна оцінка вартості послуг PDR</button>
-                    </li>
-                    <li class="advantage-block">
-                            <svg class="advantage-icon" width="86" height="86">
-                                <use href="/carfix/assets/icons-1deec429.svg#icon-note"></use>
-                            </svg>
-                        <button class="advantage-button" type="button" data-modal-open>Сертифіковані майстри з досвідом 10+ років</button>
-                    </li>
-                    <li class="advantage-block">
-                            <svg class="advantage-icon" width="86" height="86">
-                                <use href="/carfix/assets/icons-1deec429.svg#icon-instruments"></use>
-                            </svg>
-                        <button class="advantage-button" type="button" data-modal-open>Професійне обладнання та матеріали</button>
-                    </li>
-                    <li class="advantage-block">
-                            <svg class="advantage-icon" width="86" height="86">
-                                <use href="/carfix/assets/icons-1deec429.svg#icon-calendar"></use>
-                            </svg>
-                        <button class="advantage-button" type="button" data-modal-open>Чіткі терміни на виконання робіт</button>
-                    </li>
-                </ul>
-            
-            
-            </div>
-        </section>
-
+            <h2 class="section-title">Чому ми?</h2>
+  
+              <div class="container">
+              
+                  <ul class="advantage-list">
+                      <li class="advantage-block">
+                              <svg class="advantage-icon" width="86" height="86">
+                                  <use href="./img/icons.svg#icon-man"></use>
+                              </svg>
+                          <button class="advantage-button" type="button" data-modal-open>Безкоштовна оцінка вартості послуг PDR</button>
+                      </li>
+                      <li class="advantage-block">
+                              <svg class="advantage-icon" width="86" height="86">
+                                  <use href="./img/icons.svg#icon-note"></use>
+                              </svg>
+                          <button class="advantage-button" type="button" data-modal-open>Сертифіковані майстри з досвідом 10+ років</button>
+                      </li>
+                      <li class="advantage-block">
+                              <svg class="advantage-icon" width="86" height="86">
+                                  <use href="./img/icons.svg#icon-instruments"></use>
+                              </svg>
+                          <button class="advantage-button" type="button" data-modal-open>Професійне обладнання та матеріали</button>
+                      </li>
+                      <li class="advantage-block">
+                              <svg class="advantage-icon" width="86" height="86">
+                                  <use href="./img/icons.svg#icon-calendar"></use>
+                              </svg>
+                          <button class="advantage-button" type="button" data-modal-open>Чіткі терміни на виконання робіт</button>
+                      </li>
+                  </ul>
+              
+              
+              </div>
+          </section>
+    
         <!--Technology PDR section-->
         <section class="technology-section container">
 
@@ -121,126 +126,154 @@
             </div>
 
             <div class="technology-text">
-        <p><span>Технологія PDR</span> - це сучасний та комплексний підхід до виправлення дефектів кузова, спричиненого різними чинниками.</p>
-        <h3>Основні причини вм'ятин:</h3>
-        <ul>
+        <p><span class="tech-span">Технологія PDR</span> - це сучасний та комплексний підхід до виправлення дефектів кузова, спричиненого різними чинниками.</p>
+  
+      <div>
+        <h3 class="tech-title">Основні причини вм'ятин:</h3>
+
+        <ul class="services-list">
             <li>Погодні умови (град, сніг)</li>
             <li>Падіння з дерев різних плодів (горіхи, каштани, жолуді, яблука тощо)</li>
             <li>Різноманітні викиди з поверхонь доріг щебеню, гравію та інших дрібних твердих предметів</li>
             <li>Невдале паркування</li>
             <li>Автомобільна аварія (ДТП)</li>
-
         </ul>
+
+      </div>
         <p>Завдяки технології PDR та спеціальному інструменту, ми можемо видалити вм'ятини різної складності на кузові автомобіля без фарбування деталей за умови, що на автомобілі не постраждало лако фарбувальне покриття.</p>
-            </div>
+      </div>
 
         </section>
+
+    
 
         <!--Services section-->
         <section class="servises-section">
 
-            <div class="container">
-                
-                <h2>Послуги</h2>
-
-                <ul>
-                    <li>
-                        <div class="service-image">
-                        
-                            <picture>
-                                <source media="(max-width: 767.98px)"
-                                    srcset="./img/services/serv1_mob.jpg. 1x, ./img/services/serv1_mob@2x.jpg 2x" width="343" height="418">
-                                <source media="(min-width: 768px)"
-                                    srcset="./img/services/serv1_tab.jpg. 1x, ./img/services/serv1_tab@2x.jpg 2x" width="840" height="600">
-                                <source media="(min-width: 1158px)"
-                                    srcset="./img/services/serv1_desk.jpg. 1x, ./img/services/serv1_desk@2x.jpg 2x" width="600" height="600">
-                        
-                                <img class="portfolio-photo" src="/carfix/assets/serv1_desk@2x-68bca9b1.jpg" alt="Видалення вмятин без пофарбування" width="360">
-                            </picture>
-                            <h3>Видалення вмятин без пофарбування</h3>
-                            
-                            <div class="servivce-overlay">
-                                <h3>Переваги технології PDR:</h3>
-                                <ul>
-                            
-                                    <li>Без фарбування</li>
-                                    <li>Без зварювання</li>
-                                    <li>Без рихтування</li>
-                                    <li>Без заміни деталей кузова</li>
-                                    <li>Тривалість робіт від 30 хвилин</li>
-                                    <li>Безкоштовна оцінка вартості робіт</li>
-                            
-                                </ul>
-                            
-                            
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                            <picture>
-                                <source media="(max-width: 767.98px)"
-                                    srcset="./img/services/serv2_mob.jpg. 1x, ./img/services/serv2_mob@2x.jpg 2x" width="343" height="418">
-                                <source media="(min-width: 768px)"
-                                    srcset="./img/services/serv2_tab.jpg. 1x, ./img/services/serv2_tab@2x.jpg 2x" width="852" height="600">
-                                <source media="(min-width: 1158px)"
-                                    srcset="./img/services/serv2_desk.jpg. 1x, ./img/services/serv2_desk@2x.jpg 2x" width="600" height="600">
-                        
-                                <img class="portfolio-photo" src="/carfix/assets/serv2_desk@2x-113893de.jpg" alt="Полірування Авто" width="360">
-                            </picture>
-                            <h3>Полірування Авто</h3>
-                            
-                            <ul>
-                                <li>
-                                    <h3>Захисне полірування авто</h3>
-                                    <p>Проводиться для захисту лакофарбового покриття авто з метою його додаткового захисту від впливузовнішніх негативних
-                                    факторів. Застосовуються поліролі, що не містять абразивних матеріалів. Рекомендується виконувати кілька разів на рік.</p>
-                                </li>
-                                <li>
-                                    <h3>Відновлювальне полірування авто</h3>
-                                    <p>Виконується для усунення шкоди, завданої лакофарбувальному покриттю. Застосовуються поліролі на абразивній основі. По
-                                    закінченню відновної обробки виконується захисне полірування.</p>
-                                </li>
-
-                            </ul>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </section>
-
+            <h2 class="section-title">Послуги</h2>
+  
+              <div class="container">
+                  
+                          <div class="service-image">
+                          
+                              <picture>
+                                  <source media="(max-width: 767.98px)"
+                                      srcset="./img/services/serv1_mob.jpg. 1x, ./img/services/serv1_mob@2x.jpg 2x" width="343" height="418">
+                                  <source media="(min-width: 768px)"
+                                      srcset="./img/services/serv1_tab.jpg. 1x, ./img/services/serv1_tab@2x.jpg 2x" width="840" height="600">
+                                  <source media="(min-width: 1158px)"
+                                      srcset="./img/services/serv1_desk.jpg. 1x, ./img/services/serv1_desk@2x.jpg 2x" width="600" height="600">
+                          
+                                  <img class="portfolio-photo" src="/carfix/assets/serv1_desk@2x-68bca9b1.jpg" alt="Видалення вмятин без пофарбування" width="360">
+                              </picture>
+                              <h3 class="services-title">Видалення вмятин без пофарбування</h3>
+                              
+                              <div class="service-overlay">
+                                  <h3 class="serv-overlay-title">Переваги технології PDR:</h3>
+  
+                                  <ul class="serv-overlay-list">
+                                  
+                                  <svg class="mark-icon" width="30" height="30">
+                                      <use href="./img/icons.svg#icon-arrow-right"></use>
+                                  </svg>
+                                      <li class="serv-item">Без фарбування</li>
+                                      
+                                      <svg class="mark-icon" width="30" height="30">
+                                      <use href="./img/icons.svg#icon-arrow-right"></use>
+                                  </svg>
+                                      <li class="serv-item">Без зварювання</li>
+                                      
+                                      <svg class="mark-icon" width="30" height="30">
+                                      <use href="./img/icons.svg#icon-arrow-right"></use>
+                                  </svg>
+                                      <li class="serv-item">Без рихтування</li>
+                                      
+                                      <svg class="mark-icon" width="30" height="30">
+                                      <use href="./img/icons.svg#icon-arrow-right"></use>
+                                  </svg>
+                                      <li class="serv-item">Без заміни деталей кузова</li>
+                                      
+                                      <svg class="mark-icon" width="30" height="30">
+                                      <use href="./img/icons.svg#icon-arrow-right"></use>
+                                  </svg>
+                                      <li class="serv-item">Тривалість робіт від 30 хвилин</li>
+                                      
+                                      <svg class="mark-icon" width="30" height="30">
+                                      <use href="./img/icons.svg#icon-arrow-right"></use>
+                                  </svg>
+                                      <li class="serv-item">Безкоштовна оцінка вартості робіт</li>
+                              
+                                  </ul>
+                              
+                              
+                              </div>
+                          </div>
+  
+                      <div class="service-image">
+                              <picture>
+                                  <source media="(max-width: 767.98px)"
+                                      srcset="./img/services/serv2_mob.jpg. 1x, ./img/services/serv2_mob@2x.jpg 2x" width="343" height="418">
+                                  <source media="(min-width: 768px)"
+                                      srcset="./img/services/serv2_tab.jpg. 1x, ./img/services/serv2_tab@2x.jpg 2x" width="852" height="600">
+                                  <source media="(min-width: 1158px)"
+                                      srcset="./img/services/serv2_desk.jpg. 1x, ./img/services/serv2_desk@2x.jpg 2x" width="600" height="600">
+                          
+                                  <img class="portfolio-photo" src="/carfix/assets/serv2_desk@2x-113893de.jpg" alt="Полірування Авто" width="360">
+                              </picture>
+                              <h3 class="services-title">Полірування Авто</h3>
+                              <div class="service-overlay">
+                              <ul>
+                                  <li>
+                                      <h3 class="serv-overlay-title">Захисне полірування авто</h3>
+                                      <p class="serv-text">Проводиться для захисту лакофарбового покриття авто з метою його додаткового захисту від впливузовнішніх негативних
+                                      факторів. Застосовуються поліролі, що не містять абразивних матеріалів. Рекомендується виконувати кілька разів на рік.</p>
+                                  </li>
+                                  <li>
+                                      <h3 class="serv-overlay-title">Відновлювальне полірування авто</h3>
+                                      <p class="serv-text">Виконується для усунення шкоди, завданої лакофарбувальному покриттю. Застосовуються поліролі на абразивній основі. По
+                                      закінченню відновної обробки виконується захисне полірування.</p>
+                                  </li>
+                              </ul>
+                              </div>
+  
+                  </ul>
+  
+              </div>
+  
+          </section>
+    
         <!--Our masters section-->
 
         <section>
-            <div class="container">
-                <h2>Наші майстри</h2>
-
-                <div>
-                    <picture>
-                        <source media="(max-width: 767.98px)"
-                            srcset="/carfix/assets/master_mob-37d249bc.jpg 1x, /carfix/assets/master_mob-37d249bc.jpg 2x" width="342" height="418">
-                        <source media="(min-width: 768px)"
-                            srcset="/carfix/assets/master_tab-17f2c57d.jpg 1x, /carfix/assets/master_tab-17f2c57d.jpg 2x" width="470" height="800">
-                        <source media="(min-width: 1158px)"
-                            srcset="/carfix/assets/master_desk-47093c95.jpg 1x, /carfix/assets/master_desk@2x-cb0a04fd.jpg 2x" width="622" height="688">
-                    
-                        <img class="portfolio-photo" src="/carfix/assets/master_desk@2x-cb0a04fd.jpg" alt="Фото майстра Кучер Євгенія" width="360">
-                    </picture>
-
-                    <h2>Кучер Євгеній</h2>
-                    <ul>
-                        <li>Дворазовий чемпіон України з видалення вм’ятин 2017 та 2019 років (AS PDR -Extreme olimpics 2017 and 2019)</li>
-                        <li>Досвід роботи більше 10 років.</li>
-                        <li>Засновник та ментор курсу PDR-Expert.</li>
-
-                    </ul>
+        
+            <h2 class="section-title">Наші майстри</h2>
+    
+                <div class="container">
+    
+                    <div>
+                        <picture>
+                            <source media="(max-width: 767.98px)"
+                                srcset="/carfix/assets/master_mob-37d249bc.jpg 1x, /carfix/assets/master_mob-37d249bc.jpg 2x" width="342" height="418">
+                            <source media="(min-width: 768px)"
+                                srcset="/carfix/assets/master_tab-17f2c57d.jpg 1x, /carfix/assets/master_tab-17f2c57d.jpg 2x" width="470" height="800">
+                            <source media="(min-width: 1158px)"
+                                srcset="/carfix/assets/master_desk-47093c95.jpg 1x, /carfix/assets/master_desk@2x-cb0a04fd.jpg 2x" width="622" height="688">
+                        
+                            <img class="portfolio-photo" src="/carfix/assets/master_desk@2x-cb0a04fd.jpg" alt="Фото майстра Кучер Євгенія" width="360">
+                        </picture>
+    
+                        <h2>Кучер Євгеній</h2>
+                        <ul>
+                            <li>Дворазовий чемпіон України з видалення вм’ятин 2017 та 2019 років (AS PDR -Extreme olimpics 2017 and 2019)</li>
+                            <li>Досвід роботи більше 10 років.</li>
+                            <li>Засновник та ментор курсу PDR-Expert.</li>
+    
+                        </ul>
+                    </div>
                 </div>
-            </div>
-
-        </section>
-
-        <!--Study section-->
+    
+            </section>
+            <!--Study section-->
         <section class="study-section">
 
             <div class="container">
@@ -258,7 +291,7 @@
                 </picture>
 
                 <div>
-                    <p>Авторський курс навчання видаленню вм'ятин  “PDR Expert”.</p>
+                    <p>Авторський курс навчаннявидаленню вм'ятин “PDR Expert”.</p>
                         <p>До курсу входить:</p>
                         <ul>
                             <li>Робота крючками</li>
@@ -274,15 +307,18 @@
             </div>
 
         </section>
-
+    
         <!--Gallery section-->
 
         <section class="gallery-section">
-            <div class="container">
-            <h2>Галерея</h2>
-            </div>
-        </section>
 
+            <h2 class="section-title">Галерея</h2>
+  
+              <div class="container">
+              </div>
+          </section>
+  
+    
         <!--Footer section-->
         <section class="footer-section">
             <div class="container">
@@ -298,8 +334,66 @@
             </div>
         </section>
 
-        
+    
+<div class="container" >
+    <!-- mobile menu-->
+    <div class="menu-container js-menu-container" id="mobile-menu">
+        <div class="top-box">
+        <a class="logo" href="./index.html">energy.flow</a>
+        <button class="menu-toggle-x js-close-menu">
+          <svg 
+          width="20"
+          height="20">
+            <use class="menu-toggle-x-icon" href="/carfix/assets/sprite-1deec429.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+   
+      <ul class="mobile-menu">
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link home-link active" href="./index.html">Home</a></li>
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link fav-link" href="./favorites.html">Favorites</a></li>
+      </ul>
 
-      </body>
+      <ul class="mob-menu-soc-box">
+
+          <li class="soc-conts-item">
+              <a class="soc-conts-link" href="https://www.facebook.com/goITclub/"
+              target="_blank" aria-label="icon-facebook">
+              <svg class="soc-conts-icon">
+                <use href="/carfix/assets/sprite-1deec429.svg#icon-facebook"></use>
+              </svg>  
+              </a>
+            </li>
+    
+        <li class="soc-conts-item">
+          <a class="soc-conts-link" 
+          href="https://www.instagram.com/goitclub/"
+              target="_blank" aria-label="icon-instagram">
+            <svg class="soc-conts-icon">
+            <use href="/carfix/assets/sprite-1deec429.svg#icon-instagram"></use>
+          </svg>  
+          </a>
+        </li>
+
+        <li class="soc-conts-item">
+          <a class="soc-conts-link" 
+          href="https://www.youtube.com/c/GoIT"
+          target="_blank" aria-label="icon-youtube">
+            <svg class="soc-conts-icon">
+            <use href="/carfix/assets/sprite-1deec429.svg#icon-youtube"></use>
+          </svg>  
+          </a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+
+
+         
+
+    </body>
 
 </html>
