@@ -43,7 +43,7 @@ const DroppableColumn: React.FC<DroppableColumnProps> = ({ status, items, childr
   );
 };
 
-export const KanbanBoard: React.FC = () => {
+export default function KanbanBoard() {
   const [requests, setRequests] = useState<RequestItem[]>([]);
   const [loading, setLoading] = useState(false);
   const [newTask, setNewTask] = useState({ name: "", phone: "", comment: "" });
