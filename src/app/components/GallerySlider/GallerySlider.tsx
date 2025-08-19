@@ -26,14 +26,15 @@ export const GallerySlider: React.FC<GallerySliderProps> = ({
     >
       {images.map((src, index) => (
         <SwiperSlide key={index}>
-          <Image
-            src={src}
-            alt={`Gallery image ${index + 1}`}
-            width={width}
-            height={height}
-            className="object-cover rounded-3xl"
-            priority={index === 0}
-          />
+          <div className="relative w-full h-[400px]">
+            <Image
+              src={src}
+              alt={`Gallery image ${index + 1}`}
+              fill
+              className="object-cover rounded-3xl"
+              priority={index === 0}
+            />
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>

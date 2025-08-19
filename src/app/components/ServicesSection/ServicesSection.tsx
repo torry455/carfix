@@ -28,10 +28,10 @@ export const ServicesSection: React.FC = () => {
   return (
     <section
       id="services"
-      className="bg-[#17181C] text-[#E5E4E4] pt-20 px-6 md:px-16"
+      className="text-[#E5E4E4] pt-20 px-5 min-h-screen"
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-[#BE7D00] mb-12 text-center uppercase">
+        <h2 className="text-[70px] font-[Manrope-ExtraBold] text-[#BE7D00] mb-12 text-center uppercase tracking-wider">
           Послуги
         </h2>
 
@@ -39,18 +39,18 @@ export const ServicesSection: React.FC = () => {
   {services.map((service, index) => (
     <div
       key={index}
-      className="bg-[#222327] rounded-2xl shadow-lg p-8 border border-[#3D3D3D] hover:scale-105 transition-transform duration-300"
+      className="bg-[#222327] rounded-2xl p-8 border border-[#3D3D3D] hover:scale-105 transition-transform duration-300"
     >
-      <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
+      <h3 className="text-[23px] font-[Manrope-Medium] uppercase tracking-wider mb-4">{service.title}</h3>
 
       {service.description && (
-        <p className="text-lg leading-relaxed text-gray-300">
+        <p className="text-[16px] leading-relaxed text-gray-300 tracking-wide font-[Manrope-Medium]">
           {service.description}
         </p>
       )}
 
       {service.items && (
-        <ul className="custom-list pl-5 space-y-2 text-gray-300">
+        <ul className="custom-list pl-5 space-y- text-gray-300 uppercase font-[Manrope-Medium] tracking-wider">
           {service.items.map((item, i) => (
             <li key={i}>{item}</li>
           ))}
