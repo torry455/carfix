@@ -99,10 +99,24 @@ export const HeroSection: React.FC = () => {
             </li>
           </ul>
           <div className="flex gap-6 mt-4">
-            <button className="bg-[#BE7D00] text-[#17181C] uppercase font-[Manrope-Bold] px-10 py-4 rounded-xl shadow-xl hover:scale-105 hover:bg-[#a36600] transition-all duration-300 text-lg">
+            <button
+              className="bg-[#BE7D00] text-[#17181C] uppercase font-[Manrope-Bold] px-10 py-4 rounded-xl shadow-xl hover:scale-105 hover:bg-[#a36600] transition-all duration-300 text-lg"
+              onClick={() => {
+                document
+                  .getElementById("contacts")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               Записатись онлайн
             </button>
-            <button className="border border-[#BE7D00] text-[#BE7D00] uppercase font-[Manrope-Bold] px-8 py-3 rounded-xl hover:bg-[#BE7D0020] transition-colors duration-300 text-lg">
+            <button
+              className="border border-[#BE7D00] text-[#BE7D00] uppercase font-[Manrope-Bold] px-8 py-3 rounded-xl hover:bg-[#BE7D0020] transition-colors duration-300 text-lg"
+              onClick={() => {
+                document
+                  .getElementById("services")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               Наші послуги
             </button>
           </div>
