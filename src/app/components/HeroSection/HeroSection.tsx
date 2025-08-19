@@ -19,11 +19,11 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       id="hero"
-      className={`relative flex flex-col items-center justify-center px-2 text-[#E5E4E4] max-w-[1500px] mx-auto min-h-screen overflow-hidden transition-all duration-700
+      className={`relative flex flex-col items-center justify-center px-7 text-[#E5E4E4] max-w-[1500px] mx-auto min-h-screen overflow-hidden transition-all duration-700
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
       `}
     >
-      <h1 className="text-[100px] font-[Manrope-ExtraBold] leading-tight tracking-[4px] uppercase text-center drop-shadow-lg mb-40 mt-[-150px]">
+      <h1 className="lg:text-[100px] md:text-[70px] sm:text-[55px] text-[50px] font-[Manrope-ExtraBold] leading-tight tracking-[4px] uppercase text-center drop-shadow-lg mb-30 pt-[70px]">
         Видалення вм&apos;ятин без пофарбування
       </h1>
       <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full uppercase font-[Manrope-Bold]">
