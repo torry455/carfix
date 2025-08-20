@@ -11,7 +11,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="uk">
-      <body className="bg-[#17181C] text-[#E5E4E4] antialiased">
+      <body className="bg-[#17181C] text-[#E5E4E4] antialiased bg-[#111215]">
         <div className="max-w-[1500px] 2xl:m-auto xl:mx-5 md:mx-5">
           <ParallaxBalls />
           <Header />
