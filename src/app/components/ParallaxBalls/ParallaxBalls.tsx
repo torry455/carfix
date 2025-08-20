@@ -1,18 +1,48 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 
+// --- Configuration ---
+// These constants control the size, speed, and overall look of the balls.
+const CONTAINER_WIDTH = 1500;
+const CONTAINER_HEIGHT = 3000;
+const EDGE_PADDING = 180;
 const ballsConfig = [
-  { size: 250, blur: 40, speed: 0.0005, wave: 30, top: 40, left: 50 },
-  { size: 200, blur: 30, speed: 0.0001, wave: 40, top: 60, left: 20 },
-  { size: 270, blur: 60, speed: 0.0004, wave: 50, top: 20, left: 70 },
-  { size: 190, blur: 35, speed: 0.0007, wave: 35, top: 70, left: 30 },
-  { size: 230, blur: 50, speed: 0.00045, wave: 45, top: 30, left: 10 },
-  { size: 180, blur: 45, speed: 0.0006, wave: 25, top: 50, left: 80 },
-  { size: 210, blur: 38, speed: 0.00035, wave: 38, top: 80, left: 50 },
-  { size: 160, blur: 32, speed: 0.00055, wave: 30, top: 10, left: 60 },
-  { size: 220, blur: 45, speed: 0.00065, wave: 32, top: 55, left: 15 },
-  { size: 280, blur: 55, speed: 0.00025, wave: 42, top: 75, left: 90 },
+  // --- New balls added to the top ---
+  { size: 220, blur: 45, speed: 0.0006, wave: 18, top: 0, left: 50 },
+  { size: 180, blur: 38, speed: 0.0007, wave: 15, top: 5, left: 25 },
+  { size: 260, blur: 55, speed: 0.00045, wave: 22, top: 8, left: 70 },
+  { size: 195, blur: 32, speed: 0.0008, wave: 13, top: 12, left: 35 },
+  // --- Original balls list ---
+  { size: 250, blur: 40, speed: 0.0005, wave: 20, top: 10, left: 40 },
+  { size: 200, blur: 30, speed: 0.0001, wave: 18, top: 25, left: 50 },
+  { size: 270, blur: 60, speed: 0.0004, wave: 22, top: 40, left: 60 },
+  { size: 190, blur: 35, speed: 0.0007, wave: 15, top: 55, left: 45 },
+  { size: 230, blur: 50, speed: 0.00045, wave: 17, top: 70, left: 55 },
+  { size: 180, blur: 45, speed: 0.0006, wave: 14, top: 85, left: 50 },
+  { size: 210, blur: 38, speed: 0.00035, wave: 16, top: 100, left: 42 },
+  { size: 160, blur: 32, speed: 0.00055, wave: 13, top: 115, left: 58 },
+  { size: 220, blur: 45, speed: 0.00065, wave: 12, top: 130, left: 47 },
+  { size: 280, blur: 55, speed: 0.00025, wave: 19, top: 145, left: 53 },
+  { size: 200, blur: 30, speed: 0.0001, wave: 18, top: 160, left: 60 },
+  { size: 270, blur: 60, speed: 0.0004, wave: 22, top: 175, left: 40 },
+  { size: 190, blur: 35, speed: 0.0007, wave: 15, top: 190, left: 55 },
+  { size: 230, blur: 50, speed: 0.00045, wave: 17, top: 205, left: 45 },
+  { size: 260, blur: 55, speed: 0.0003, wave: 25, top: 220, left: 50 },
+  { size: 170, blur: 30, speed: 0.0008, wave: 10, top: 235, left: 65 },
+  { size: 240, blur: 48, speed: 0.0004, wave: 18, top: 250, left: 35 },
+  { size: 205, blur: 36, speed: 0.0006, wave: 14, top: 265, left: 48 },
+  // --- New balls added for more density ---
+  { size: 215, blur: 42, speed: 0.0007, wave: 16, top: 30, left: 20 },
+  { size: 285, blur: 58, speed: 0.0003, wave: 20, top: 80, left: 80 },
+  { size: 150, blur: 35, speed: 0.0009, wave: 11, top: 125, left: 25 },
+  { size: 245, blur: 52, speed: 0.0005, wave: 19, top: 185, left: 75 },
+  { size: 170, blur: 33, speed: 0.0006, wave: 12, top: 215, left: 20 },
 ];
+
+// Helper function to clamp values within a range
+function clamp(val: number, min: number, max: number) {
+  return Math.max(min, Math.min(max, val));
+}
 
 export const ParallaxBalls: React.FC = () => {
   const [balls, setBalls] = useState(
@@ -21,123 +51,84 @@ export const ParallaxBalls: React.FC = () => {
       y: ball.top,
     }))
   );
-  const [lines, setLines] = useState<
-    { x1: number; y1: number; x2: number; y2: number; opacity: number }[]
-  >([]);
-
-  // Ref to hold the SVG container element
-  const svgRef = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
     let animationFrameId: number;
 
     const animate = (time: DOMHighResTimeStamp) => {
-      // Calculate new positions based on time and wave properties.
+      // Get the current scroll position for the parallax effect
+      const scrollY = window.scrollY;
+
       const currentPositions = ballsConfig.map((ball) => {
+        // Calculate a sine wave for smooth, circular motion
         const waveY = Math.sin(time * ball.speed + ball.top) * ball.wave * 0.5;
         const waveX = Math.cos(time * ball.speed * 0.8 + ball.left) * ball.wave;
-        // Use a base position relative to the viewport (e.g., using vw/vh)
-        // This is a simple pixel-based calculation, but you could use a percentage-based
-        // calculation here for more advanced responsiveness.
-        const x = (ball.left * window.innerWidth) / 100 + waveX + ball.size / 2;
-        const y = (ball.top * window.innerHeight) / 100 + waveY + ball.size / 2;
+
+        // Calculate raw x and y positions based on initial config and wave motion
+        const xRaw =
+          EDGE_PADDING +
+          ((CONTAINER_WIDTH - EDGE_PADDING * 2) * ball.left) / 100 +
+          waveX;
+        const yRaw =
+          EDGE_PADDING +
+          ((CONTAINER_HEIGHT - EDGE_PADDING * 2) * ball.top) / 100 +
+          waveY +
+          // Apply parallax effect based on scroll position
+          scrollY * 0.2;
+
+        // Ensure balls stay within the container boundaries
+        const minX = EDGE_PADDING + ball.wave + ball.size / 2;
+        const maxX = CONTAINER_WIDTH - EDGE_PADDING - ball.wave - ball.size / 2;
+        const x = clamp(xRaw, minX, maxX);
+
+        const minY = EDGE_PADDING + ball.wave + ball.size / 2;
+        const maxY =
+          CONTAINER_HEIGHT - EDGE_PADDING - ball.wave - ball.size / 2;
+        const y = clamp(yRaw, minY, maxY);
+
         return { x, y };
       });
 
-      // Calculate connections between nearby balls
-      const newLines = [];
-      const threshold = 350;
-      for (let i = 0; i < currentPositions.length; i++) {
-        for (let j = i + 1; j < currentPositions.length; j++) {
-          const p1 = currentPositions[i];
-          const p2 = currentPositions[j];
-          // Calculate the distance between two balls.
-          const distance = Math.sqrt(
-            Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2)
-          );
-          if (distance < threshold) {
-            const opacity = 1 - distance / threshold;
-            newLines.push({
-              x1: p1.x,
-              y1: p1.y,
-              x2: p2.x,
-              y2: p2.y,
-              opacity,
-            });
-          }
-        }
-      }
-
+      // Update the state with the new ball positions
       setBalls(currentPositions);
-      setLines(newLines);
       animationFrameId = requestAnimationFrame(animate);
     };
 
-    // Parallax effect based on scroll position
-    const handleScroll = () => {
-      if (!svgRef.current) return;
-      const scrollY = window.scrollY;
-      const parallaxFactor = 0.5; // Adjust this value to change the parallax speed
-      // Apply a transform to the SVG container to create the parallax effect
-      svgRef.current.style.transform = `translateY(${
-        scrollY * parallaxFactor
-      }px)`;
-    };
-
+    // Start the animation loop
     animationFrameId = requestAnimationFrame(animate);
-    window.addEventListener("scroll", handleScroll);
 
     return () => {
+      // Clean up the animation frame on component unmount
       cancelAnimationFrame(animationFrameId);
-      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    // The main container for the background. It is now part of the document flow
-    // with a large min-height to enable scrolling.
-    <div className="absolute inset-0 z-[-1] overflow-hidden min-h-[200vh]">
+    <div className="absolute inset-0 z-[-1] overflow-hidden min-h-[300vh] flex justify-center">
       <svg
-        ref={svgRef}
-        width="100%"
-        height="100%"
-        // Position the SVG relative to the viewport.
-        // The transform will move it up/down as the user scrolls.
-        className="absolute w-full h-full pointer-events-none"
+        width={CONTAINER_WIDTH}
+        height={CONTAINER_HEIGHT}
+        className="absolute pointer-events-none"
         style={{
+          left: "50%",
+          transform: "translateX(-50%)",
           top: 0,
-          left: 0,
         }}
       >
         <defs>
+          {/* Simple blur filter for soft blurred balls */}
           <filter id="blur">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="80" />
+            <feGaussianBlur in="SourceGraphic" stdDeviation="50" />
           </filter>
         </defs>
-        <g filter="url(#blur)">
-          {/* Balls */}
+        <g filter="url(#blur)" fill="#BE7D00">
           {balls.map((ball, i) => (
             <circle
               key={i}
               cx={ball.x}
               cy={ball.y}
               r={ballsConfig[i].size / 2}
-              fill="#BE7D00"
-              opacity={0.3}
-            />
-          ))}
-          {/* Lines */}
-          {lines.map((line, i) => (
-            <line
-              key={i}
-              x1={line.x1}
-              y1={line.y1}
-              x2={line.x2}
-              y2={line.y2}
-              stroke="#BE7D00"
-              strokeWidth="24"
-              opacity={line.opacity * 0.2}
-              strokeLinecap="round"
+              opacity={0.25}
             />
           ))}
         </g>
