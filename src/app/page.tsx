@@ -1,9 +1,9 @@
 import React from "react";
-import { HeroSection } from "./components/HeroSection/HeroSection";
-import { AboutSection } from "./components/AboutSection/AboutSection";
-import { ServicesSection } from "./components/ServicesSection/ServicesSection";
-import { MastersSection } from "./components/Master/Master";
-import { TrainingSection } from "./components/TrainingSection/TrainingSection";
+import { HeroSection } from "./components/Templates/HeroSection/HeroSection";
+import { AboutSection } from "./components/Templates/AboutSection/AboutSection";
+import { ServicesSection } from "./components/Templates/ServicesSection/ServicesSection";
+import { MastersSection } from "./components/Templates/Master/Master";
+import { TrainingSection } from "./components/Templates/TrainingSection/TrainingSection";
 
 const HomePage: React.FC = () => {
   return (

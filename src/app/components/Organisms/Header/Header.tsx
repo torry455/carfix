@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { menuItems } from "../Atoms/Constants/menuItems";
-import { BurgerMenu } from "../Molecules/BurgerMenu/BurgerMenu";
-import { BurgerMenuButton } from "../Atoms/Buttons/BurgerMenuButton";
-import { BookButton } from "../Atoms/Buttons/BookButton";
+import { menuItems } from "../../Atoms/Constants/menuItems";
+import { BurgerMenu } from "../../Molecules/BurgerMenu/BurgerMenu";
+import { BurgerMenuButton } from "../../Atoms/Buttons/BurgerMenuButton";
+import { BookButton } from "../../Atoms/Buttons/BookButton";
 
 export const Header: React.FC = () => {
   return (
