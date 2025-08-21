@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+  --breakpoint-xlnav: 1048px;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-brand-gold: #be7d00;
+  --color-brand-dark: #17181c;
+  --color-brand-gray: #e5e4e4;
+  --color-brand-accent: #ff5722;
+  --font-sans: "Manrope", Arial, sans-serif;
 }
 
 @font-face {
@@ -31,15 +40,6 @@
   src: url("/fonts/Manrope-ExtraBold.ttf") format("truetype");
   font-weight: bold;
   font-style: bold;
-}
-
-@theme inline {
-  --color-brand-gold: var(--brand-gold);
-  --color-brand-dark: var(--brand-dark);
-  --color-brand-gray: var(--brand-gray);
-  --color-brand-accent: var(--brand-accent);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {

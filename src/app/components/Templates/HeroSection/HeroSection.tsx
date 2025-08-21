@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { GallerySlider } from "../GallerySlider/GallerySlider";
+import { GallerySlider } from "../../Molecules/GallerySlider/GallerySlider";
+import { BookButton } from "../../Atoms/Buttons/BookButton";
 
 export const HeroSection: React.FC = () => {
   const [visible, setVisible] = useState(false);
@@ -19,16 +20,16 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       id="hero"
-      className={`relative flex flex-col items-center justify-center px-7 text-[#E5E4E4] max-w-[1500px] mx-auto min-h-screen overflow-hidden transition-all duration-700
+      className={`relative flex flex-col items-center justify-center px-4 text-[#E5E4E4] max-w-[1500px] mx-auto min-h-screen overflow-hidden transition-all duration-700
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
       `}
     >
-      <h1 className="lg:text-[100px] md:text-[70px] sm:text-[55px] text-[50px] font-[Manrope-ExtraBold] leading-tight tracking-[4px] uppercase text-center drop-shadow-lg mb-30 pt-[70px]">
+      <h1 className="lg:text-[100px] md:text-[70px] sm:text-[55px] text-[36px] font-[Manrope-ExtraBold] leading-tight tracking-[4px] uppercase text-center drop-shadow-lg mb-10 mt-40">
         Видалення вм&apos;ятин без пофарбування
       </h1>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full uppercase font-[Manrope-Bold]">
-        <div className="flex-1 w-full h-[400px] flex flex-col justify-between py-[22px]">
-          <ul className="text-lg text-[#CFCFCF] font-[Manrope-Bold] space-y-9">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full uppercase font-[Manrope-Bold] flex-1 h-full">
+        <div className="flex-1 w-full h-full flex flex-col justify-between py-0">
+          <ul className="text-lg text-[#CFCFCF] font-[Manrope-Bold] space-y-9 my-10">
             <li className="flex items-center gap-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -99,8 +100,18 @@ export const HeroSection: React.FC = () => {
             </li>
           </ul>
           <div className="flex gap-6 mt-4">
-            <button
-              className="bg-[#BE7D00] text-[#17181C] uppercase font-[Manrope-Bold] px-10 py-4 rounded-xl shadow-xl hover:scale-105 hover:bg-[#a36600] transition-all duration-300 text-lg"
+            <div>
+              <BookButton
+                buttonName="записатись онлайн"
+                onClickFn={() => {
+                  document
+                    .getElementById("contacts")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              />
+            </div>
+            {/* <button
+              className="bg-[#BE7D00] text-[#17181C] uppercase font-[Manrope-Bold] px-8 py-4 rounded-xl shadow-xl hover:scale-105 hover:bg-[#a36600] transition-all duration-300 text-base md:text-lg"
               onClick={() => {
                 document
                   .getElementById("contacts")
@@ -108,9 +119,9 @@ export const HeroSection: React.FC = () => {
               }}
             >
               Записатись онлайн
-            </button>
+            </button> */}
             <button
-              className="border border-[#BE7D00] text-[#BE7D00] uppercase font-[Manrope-Bold] px-8 py-3 rounded-xl hover:bg-[#BE7D0020] transition-colors duration-300 text-lg"
+              className="border border-[#BE7D00] text-[#BE7D00] uppercase font-[Manrope-Bold] px-6 py-3 rounded-xl hover:bg-[#BE7D0020] transition-colors duration-300 text-base md:text-lg"
               onClick={() => {
                 document
                   .getElementById("services")
@@ -121,7 +132,7 @@ export const HeroSection: React.FC = () => {
             </button>
           </div>
         </div>
-        <div className="flex-1 w-full h-[400px] rounded-3xl shadow-2xl border-4 border-[#BE7D00] overflow-hidden box-border relative z-10">
+        <div className="flex-1 w-full h-full min-h-[300px] rounded-3xl shadow-2xl border-4 border-[#BE7D00] overflow-hidden box-border relative z-10 flex items-center justify-center">
           <GallerySlider images={galleryImages} />
         </div>
       </div>
