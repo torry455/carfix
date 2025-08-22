@@ -13,21 +13,23 @@ const masters: Master[] = [
   {
     name: "Кучер Євгеній",
     title: "Дворазовий чемпіон України з видалення вм’ятин (2017р. та 2019р.)",
-    bio: "Досвід роботи більше 10 років. Засновник та ментор курсу PDR-Expert.",
-    img: "/img/master1.jpg",
+    bio: "Більше 10 років досвіду у сфері PDR. Засновник та ментор курсу PDR-Expert, який допомагає майстрам досягати досконалості у видаленні вм’ятин.",
+    img: "/img/masters/master1.jpg",
+    highlight: "Owner",
+  },
+  {
+    name: "Арем Зубцов",
+    title: "Майстер PDR",
+    bio: "Спеціаліст із видалення вм’ятин будь-якої складності. Вміє відновити авто до ідеального стану без фарбування та заміни деталей.",
+    img: "/img/masters/master2.jpg",
     highlight: "PDR-Expert",
   },
   {
-    name: "Ім'я Прізвище",
-    title: "Старший майстер з полірування",
-    bio: "Спеціаліст з захисного та відновлювального полірування.",
-    img: "/img/master1.jpg",
-  },
-  {
-    name: "Ім'я Прізвище",
-    title: "Майстер з діагностики",
-    bio: "Професійна діагностика кузова та складні ремонти.",
-    img: "/img/master1.jpg",
+    name: "Максим Скічко",
+    title: "Майстер PDR",
+    bio: "Експерт з діагностики та складних ремонтів кузова. Його точність та досвід гарантують бездоганний результат у роботі з будь-якими вм’ятинами.",
+    img: "/img/masters/master3.jpg",
+    highlight: "PDR-Expert",
   },
 ];
 
@@ -58,59 +60,25 @@ export const MastersSection: React.FC = () => {
                   className="rounded-full object-cover border-[1px] border-[#BE7D00]"
                 />
                 {m.highlight && (
-                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#BE7D00] text-[#17181C] px-3 py-0.5 rounded-full text-xs font-[Manrope-ExtraBold] shadow">
+                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#BE7D00] text-[#17181C] px-4 py-1 rounded-full text-xs font-[Manrope-ExtraBold] shadow whitespace-nowrap">
                     {m.highlight}
                   </div>
                 )}
               </div>
 
-              <h3 className="text-[22px] font-[Manrope-Bold] text-[#E5E4E4] uppercase tracking-widest mb-5">{m.name}</h3>
+              <h3 className="text-[22px] font-[Manrope-Bold] text-[#E5E4E4] uppercase tracking-widest mb-5">
+                {m.name}
+              </h3>
               {m.title && (
-                <p className="text-sm text-[#CFCFCF] mt-1 mb-3 font-[Manrope-Medium] tracking-wider leading-6 mb-5">{m.title}</p>
+                <p className="text-sm text-[#CFCFCF] mt-1 mb-3 font-[Manrope-Medium] tracking-wider leading-6 mb-5">
+                  {m.title}
+                </p>
               )}
 
               <p className="text-sm text-[#BFC0C0] leading-6 mb-4 font-[Manrope-Medium]">
                 {m.bio}
               </p>
 
-              <div className="flex items-center justify-center gap-3">
-                {/* social / contact icons */}
-                <a
-                  href="#"
-                  className="p-2 rounded-md bg-[#17181C] border border-[#3D3D3D] hover:bg-[#BE7D00] hover:text-[#17181C] transition-colors"
-                  aria-label={`contact ${m.name}`}
-                >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <path d="M21 8v6a2 2 0 0 1-2 2h-6" />
-                    <path d="M3 6h7" />
-                    <path d="M7 10v6" />
-                    <path d="M21 8l-9 6L3 8" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="p-2 rounded-md bg-[#17181C] border border-[#3D3D3D] hover:bg-[#BE7D00] hover:text-[#17181C] transition-colors"
-                  aria-label={`instagram ${m.name}`}
-                >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <rect x="3" y="3" width="18" height="18" rx="4" />
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                    <path d="M17.5 6.5h.01" />
-                  </svg>
-                </a>
-              </div>
             </article>
           ))}
         </div>
