@@ -15,14 +15,12 @@ export default function RootLayout({
   return (
     <Provider store={store}>
       <html lang="uk">
-        <body className="text-[#E5E4E4] antialiased">
-          <div className="bg-[#000] z-[-2]">
-            <div className="max-w-[1500px] 2xl:m-auto xl:mx-5 md:mx-5 mx-2">
-              <ParallaxBalls />
-              <Header />
-              {children}
-              <Footer />
-            </div>
+        <body className="relative text-[#E5E4E4] antialiased bg-[#000]">
+          <ParallaxBalls />
+          <div className="relative z-10 max-w-[1500px] 2xl:m-auto xl:mx-5 md:mx-5 mx-2">
+            <Header />
+            {children}
+            <Footer />
           </div>
         </body>
       </html>

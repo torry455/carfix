@@ -1,16 +1,17 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { GallerySlider } from "../../Molecules/GallerySlider/GallerySlider";
+import { VideoGallerySlider } from "../../Molecules/GallerySlider/GallerySlider";
 import { BookButton } from "../../Atoms/Buttons/BookButton";
 
 export const HeroSection: React.FC = () => {
   const [visible, setVisible] = useState(false);
-  const galleryImages = [
-    "img/herogallery/car1.jpg",
-    "img/herogallery/car2.jpg",
-    "img/herogallery/car3.jpg",
-    "img/herogallery/car4.jpg",
-    "img/herogallery/car5.jpg",
+
+  const galleryVideos = [
+    "videos/heroVideo/video1.mp4",
+    "videos/heroVideo/video2.mp4",
+    "videos/heroVideo/video3.mp4",
+    "videos/heroVideo/video4.mp4",
+    "videos/heroVideo/video5.mp4",
   ];
 
   useEffect(() => {
@@ -110,16 +111,6 @@ export const HeroSection: React.FC = () => {
                 }}
               />
             </div>
-            {/* <button
-              className="bg-[#BE7D00] text-[#17181C] uppercase font-[Manrope-Bold] px-8 py-4 rounded-xl shadow-xl hover:scale-105 hover:bg-[#a36600] transition-all duration-300 text-base md:text-lg"
-              onClick={() => {
-                document
-                  .getElementById("contacts")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              Записатись онлайн
-            </button> */}
             <button
               className="border border-[#BE7D00] text-[#BE7D00] uppercase font-[Manrope-Bold] px-6 py-3 rounded-xl hover:bg-[#BE7D0020] transition-colors duration-300 text-base md:text-lg"
               onClick={() => {
@@ -133,7 +124,7 @@ export const HeroSection: React.FC = () => {
           </div>
         </div>
         <div className="flex-1 w-full h-full min-h-[300px] rounded-3xl shadow-2xl border-4 border-[#BE7D00] overflow-hidden box-border relative z-10 flex items-center justify-center">
-          <GallerySlider images={galleryImages} />
+          <VideoGallerySlider videos={galleryVideos} width={600} height={400} />
         </div>
       </div>
     </section>
