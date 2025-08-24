@@ -12,7 +12,7 @@ export const TrainingSection: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="relative w-full h-72 sm:h-96 rounded-2xl overflow-hidden shadow-lg">
           <video
-            src="/video/work.mp4"
+            src="/videos/work.mp4"
             autoPlay
             loop
             muted

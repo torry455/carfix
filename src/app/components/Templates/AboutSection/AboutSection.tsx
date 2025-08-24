@@ -27,7 +27,6 @@ export const AboutSection: React.FC = () => {
 
   return (
     <section
-      id="about"
       ref={sectionRef}
       className={`max-w-[1600px] mx-auto transition-all duration-700 min-h-screen px-5
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
