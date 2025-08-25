@@ -7,6 +7,7 @@ import { TrainingSection } from "./components/Templates/TrainingSection/Training
 import { ScrollToTopButton } from "./components/Molecules/ScrollToTopButton/ScrollToTopButton";
 import { AboutCarfix } from "./components/Templates/AboutCarfix/AboutCarfix";
 import Gallery from "./components/Templates/Gallery/Gallery";
+import { ReviewsSection } from "./components/Templates/ReviewsSection/ReviewsSection";
 
 const HomePage: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage: React.FC = () => {
       <MastersSection />
       <TrainingSection />
       <Gallery />
+      <ReviewsSection />
       <ScrollToTopButton />
     </>
   );
