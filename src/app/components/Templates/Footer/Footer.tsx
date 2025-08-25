@@ -202,7 +202,6 @@ export const Footer: React.FC = () => {
            
             {/* Карта Вишневе */} {/* Вишневе */}
             <div className="rounded-lg overflow-hidden shadow-lg">
-              {" "}
               <iframe
                 title="Вишневе"
                 src="https://www.google.com/maps?q=50.3883701,30.3532127&hl=uk&z=17&output=embed"

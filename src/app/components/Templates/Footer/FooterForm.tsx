@@ -68,9 +68,9 @@ export const FooterForm: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-[#1c1e22] rounded-lg p-6 shadow-lg flex flex-col gap-4 relative"
+      className="bg-[#1c1e22] rounded-lg shadow-lg flex flex-col gap-4 relative"
     >
-      <h4 className="text-xl font-semibold text-[#BE7D00] mb-4">
+      <h4 className="text-2xl font-[Manrope-ExtraBold] text-[#BE7D00] mb-4">
         Записатись на послугу
       </h4>
 
@@ -115,7 +115,7 @@ export const FooterForm: React.FC = () => {
           className="mt-1 block w-full rounded-md bg-[#111215] border border-[#555] text-white px-3 py-2 resize-none"
         />
       </label>
-
+{/* 
       <label className="block relative cursor-pointer select-none">
         <span className="text-[#CFCFCF] mb-1 block">Додайте фото пошкодження</span>
         <input
@@ -153,7 +153,7 @@ export const FooterForm: React.FC = () => {
             Обрано файл: {formData.photo.name}
           </p>
         )}
-      </label>
+      </label> */}
 
       <button
         type="submit"
