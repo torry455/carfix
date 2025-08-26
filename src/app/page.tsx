@@ -15,9 +15,9 @@ const HomePage: React.FC = () => {
     <>
       <HeroSection />
       <AboutCarfix />
+      <MastersSection />
       <AboutSection />
       <ServicesSection />
-      <MastersSection />
       <TrainingSection />
       <Gallery />
       <ReviewsSection />
