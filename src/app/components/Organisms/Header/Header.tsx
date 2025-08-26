@@ -24,7 +24,7 @@ export const Header: React.FC = () => {
             {menuItems.map(({ label, anchor }) => (
               <li key={anchor}>
                 <a
-                  href={`#${anchor}`}
+                  href={`/#${anchor}`}
                   className="hover:text-[#BE7D00] transition-colors duration-300"
                 >
                   {label}
