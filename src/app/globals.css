@@ -83,3 +83,27 @@ button {
   font-weight: bold;
   font-size: 18px;
 }
+
+
+/* custom list для важливих пунктів */
+/* .custom-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 12px;
+}
+
+.custom-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-brand-gold);
+  font-weight: bold;
+  font-size: 18px;
+} */
