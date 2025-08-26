@@ -8,18 +8,20 @@ import { ScrollToTopButton } from "./components/Molecules/ScrollToTopButton/Scro
 import { AboutCarfix } from "./components/Templates/AboutCarfix/AboutCarfix";
 import Gallery from "./components/Templates/Gallery/Gallery";
 import { ReviewsSection } from "./components/Templates/ReviewsSection/ReviewsSection";
+import { Articles } from "./components/Templates/Articles/Articles";
 
 const HomePage: React.FC = () => {
   return (
     <>
       <HeroSection />
       <AboutCarfix />
+      <MastersSection />
       <AboutSection />
       <ServicesSection />
-      <MastersSection />
       <TrainingSection />
       <Gallery />
       <ReviewsSection />
+      <Articles />
       <ScrollToTopButton />
     </>
   );

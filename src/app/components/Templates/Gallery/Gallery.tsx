@@ -3,6 +3,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 type VideoPair = {
   before: string;
@@ -83,7 +84,7 @@ const Gallery: React.FC = () => {
   const { before, after } = videoPairs[currentIndex];
 
   return (
-<div className="relative w-full max-w-6xl mx-auto py-16 select-none">
+<div id="gallery" className="relative w-full max-w-6xl mx-auto py-16 select-none">
   <h2 className="text-[60px] font-[Manrope-ExtraBold] uppercase text-center text-[#BE7D00] mb-6 tracking-wide">
     Наше &quot;До і Після&quot;
   </h2>
@@ -151,6 +152,15 @@ const Gallery: React.FC = () => {
     <span className="pl-2">До</span>
     <span className="pr-2">Після</span>
   </div>
+
+
+  <div className="text-center mt-8">
+  <Link href="/gallery" passHref>
+    <button className="bg-[#BE7D00] text-[#17181C] font-[Manrope-ExtraBold] tracking-widest uppercase px-6 py-2 rounded-lg shadow-md hover:bg-[#a36600] transition-colors duration-300">
+      Переглянути всю галерею
+    </button>
+  </Link>
+</div>
 </div>
 
 

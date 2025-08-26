@@ -32,7 +32,7 @@ export const galleryCategories: Category[] = [
       { before: "/img/gallery/before-after/before9.jpg", after: "/img/gallery/before-after/after9.jpg", title: "Fiat" },
       { before: "/img/gallery/before-after/before10.jpg", after: "/img/gallery/before-after/after10.jpg", title: "Ford" },
       { before: "/img/gallery/before-after/before11.jpg", after: "/img/gallery/before-after/after11.jpg", title: "Ford" },
-      { before: "/img/gallery/before-after/before12.jpg", after: "/img/gallery/before-after/after12.jpg", title: "Nissan" },
+      { before: "/img/gallery/before-after/before12.jpg", after: "/img/gallery/before-after/after12.jpg", title: "Toyota" },
     ],
   },
   {
