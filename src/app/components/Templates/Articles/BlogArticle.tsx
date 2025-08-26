@@ -2,7 +2,6 @@
 
 import React from "react";
 
-import { FaCheckCircle } from "react-icons/fa";
 
 type ContentBlock = { type: "paragraph" | "subtitle" | "list"; text: string | string[] };
 
