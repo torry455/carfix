@@ -37,7 +37,7 @@ export const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="text-[#E5E4E4] pt-20 px-5 min-h-screen">
+    <section id="services" className="text-[#E5E4E4] pt-20 px-5 min-h-[1000px]">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-[70px] font-[Manrope-ExtraBold] text-[#BE7D00] mb-12 text-center uppercase tracking-wider">
           Послуги

@@ -22,7 +22,7 @@ export const AboutCarfix: React.FC = () => {
     <section
       id="about"
       ref={sectionRef}
-      className={`max-w-[1600px] mx-auto transition-all duration-700 px-5 py-20 min-h-screen flex flex-col lg:flex-row items-center gap-12
+      className={`max-w-[1600px] mx-auto transition-all duration-700 px-5 py-20 min-h-[1000px] flex flex-col lg:flex-row items-center gap-12
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
       `}
     >

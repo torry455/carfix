@@ -35,7 +35,7 @@ const masters: Master[] = [
 
 export const MastersSection: React.FC = () => {
   return (
-    <section id="masters" className="py-20 max-w-[1500px] min-h-screen">
+    <section id="masters" className="py-20 max-w-[1500px] min-h-[1000px]">
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
         <h2 className="text-[70px] font-[Manrope-ExtraBold] text-center text-[#BE7D00] mb-8 uppercase">
           НАШІ МАЙСТРИ

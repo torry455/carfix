@@ -25,7 +25,7 @@ export const BurgerMenu: React.FC = () => {
   return (
     <div className="xlnav:hidden">
       <nav
-        className={`fixed top-0 left-0 right-0 bottom-0 bg-[#000] min-h-screen flex flex-col justify-center items-center gap-10 text-2xl font-semibold text-[#E5E4E4] transition-opacity duration-300 z-[100] ${
+        className={`fixed top-0 left-0 right-0 bottom-0 bg-[#000] min-h-[1000px] flex flex-col justify-center items-center gap-10 text-2xl font-semibold text-[#E5E4E4] transition-opacity duration-300 z-[100] ${
           isMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
