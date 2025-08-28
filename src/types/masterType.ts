@@ -1,7 +1,7 @@
 export type Master = {
   name: string;
-  title?: string;
-  bio?: string;
+  title: string;
+  bio: string;
   img: string;
-  highlight?: string;
+  highlight: string;
 };
