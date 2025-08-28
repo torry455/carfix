@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
 import {
   FaInstagram,
   FaTelegramPlane,
@@ -48,8 +46,8 @@ export const Footer: React.FC = () => {
             <FaViber className="text-[#BE7D00] hover:text-[#FFD36E] h-6 w-6 transition-colors" />
           </a>
         </div>
-        <div className="flex flex-col gap-3 text-md text-center">
-          <p className="text-center text-[#BFC0C0] select-none mt-2">
+        <div className="flex flex-col gap-3 text-md text-center text-[#BFC0C0] sm:text-sm md:text-sm">
+          <p>
             CARFIX PDR EXPERT © 2025
           </p>
           <p>Видалення вм&#39;ятин без пофарбування у Вишневому.</p>

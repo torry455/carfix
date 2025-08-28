@@ -3,7 +3,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { store } from "../lib/store";
 import { Header } from "./components/Organisms/Header/Header";
-import { Footer } from "./components/Templates/Footer/Footer";
+import { Footer } from "./components/Organisms/Footer/Footer";
 import "./globals.css";
 import { ParallaxBalls } from "./components/Molecules/ParallaxBalls/ParallaxBalls";
 

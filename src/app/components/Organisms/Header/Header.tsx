@@ -8,7 +8,7 @@ import { BookButton } from "../../Atoms/Buttons/BookButton";
 export const Header: React.FC = () => {
   return (
     <header className="bg-[#fff]/3 font-[Manrope-Bold] tracking-widest uppercase backdrop-blur-xl rounded-[50px] text-[#E5E4E4] py-4 px-6 w-full z-50 sticky top-5 max-w-[1500px]">
-      <div className="max-w-[1500px] mx-auto xlnav:mx-7 flex justify-between items-center">
+      <div className="max-w-[1500px] mx-auto xlnav:mx-3 flex justify-between items-center">
         <Link href="/" className="flex-shrink-0" aria-label="Carfix Home Page">
           <Image
             src="/img/carfix-logo.png"

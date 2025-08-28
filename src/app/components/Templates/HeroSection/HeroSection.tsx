@@ -21,7 +21,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       id="hero"
-      className={`relative flex flex-col items-center justify-center px-4 text-[#E5E4E4] max-w-[1500px] mx-auto min-h-screen overflow-hidden transition-all duration-700
+      className={`relative flex flex-col items-center justify-center px-4 text-[#E5E4E4] max-w-[1500px] mx-auto min-h-[1000px] overflow-hidden transition-all duration-700
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
       `}
     >

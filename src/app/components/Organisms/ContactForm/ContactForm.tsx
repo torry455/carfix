@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 
-export const FooterForm: React.FC = () => {
+export const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -10,7 +10,6 @@ export const FooterForm: React.FC = () => {
     photo: null as File | null,
   });
 
-  // Стан для повідомлення (текст + тип)
   const [message, setMessage] = useState<{ text: string; type: "success" | "error" | null }>({ text: "", type: null });
 
   const handleChange = (
@@ -57,7 +56,6 @@ export const FooterForm: React.FC = () => {
     }
   };
 
-  // Автоматично сховати повідомлення через 3 секунди після появи
   useEffect(() => {
     if (message.type) {
       const timeout = setTimeout(() => setMessage({ text: "", type: null }), 3000);
@@ -162,7 +160,6 @@ export const FooterForm: React.FC = () => {
         Відправити
       </button>
 
-      {/* Текстове повідомлення, яке з'являється і автоматично зникає */}
       {message.type && (
         <p
           className={`mt-4 font-semibold text-center select-none ${
