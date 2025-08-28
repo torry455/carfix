@@ -1,37 +1,6 @@
 import React from "react";
 import Image from "next/image";
-
-type Master = {
-  name: string;
-  title?: string;
-  bio?: string;
-  img: string;
-  highlight?: string;
-};
-
-const masters: Master[] = [
-  {
-    name: "Кучер Євгеній",
-    title: "Дворазовий чемпіон України з видалення вм’ятин (2017р. та 2019р.)",
-    bio: "Більше 10 років досвіду у сфері PDR. Засновник та ментор курсу PDR-Expert, який допомагає майстрам досягати досконалості у видаленні вм’ятин.",
-    img: "/img/masters/master1.jpg",
-    highlight: "Owner",
-  },
-  {
-    name: "Арем Зубцов",
-    title: "Майстер PDR",
-    bio: "Спеціаліст із видалення вм’ятин будь-якої складності. Вміє відновити авто до ідеального стану без фарбування та заміни деталей.",
-    img: "/img/masters/master2.jpg",
-    highlight: "PDR-Expert",
-  },
-  {
-    name: "Максим Скічко",
-    title: "Майстер PDR",
-    bio: "Експерт з діагностики та складних ремонтів кузова. Його точність та досвід гарантують бездоганний результат у роботі з будь-якими вм’ятинами.",
-    img: "/img/masters/master3.jpg",
-    highlight: "PDR-Expert",
-  },
-];
+import { masters } from "../../Atoms/Constants/masters";
 
 export const MastersSection: React.FC = () => {
   return (
