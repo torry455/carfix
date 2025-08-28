@@ -2,7 +2,7 @@ import React from "react";
 import { HeroSection } from "./components/Templates/HeroSection/HeroSection";
 import { AboutSection } from "./components/Templates/AboutSection/AboutSection";
 import { ServicesSection } from "./components/Templates/ServicesSection/ServicesSection";
-import { MastersSection } from "./components/Templates/Master/Master";
+import { MastersSection } from "./components/Templates/MastersSection/MastersSection";
 import { TrainingSection } from "./components/Templates/TrainingSection/TrainingSection";
 import { ScrollToTopButton } from "./components/Molecules/ScrollToTopButton/ScrollToTopButton";
 import { AboutCarfix } from "./components/Templates/AboutCarfix/AboutCarfix";
