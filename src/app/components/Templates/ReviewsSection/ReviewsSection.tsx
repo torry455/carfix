@@ -48,58 +48,77 @@ export const ReviewsSection: React.FC = () => {
 
   return (
     <section className="text-[var(--foreground)] py-16 px-6 relative">
-      <div className="max-w-6xl mx-auto">
-        {/* Заголовок */}
-        <h2 className="text-4xl font-[Manrope-ExtraBold] text-center mb-12 uppercase tracking-widest text-[var(--color-brand-gold)]">
+      <div className="max-w-6xl mx-auto flex flex-col gap-10">
+        <h2 className="text-[32px] md:text-[45px]
+        font-[Manrope-ExtraBold] text-center uppercase tracking-wide text-[var(--color-brand-gold)]">
           Відгуки клієнтів
         </h2>
 
-        {/* Стрілки поза контейнером */}
         <button
           onClick={() => scroll("left")}
-          className="absolute left-10 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/70 text-[var(--color-brand-gold)] p-3 rounded-full shadow-lg transition"
+          className="absolute left-0 lg:left-25 top-1/2 -translate-y-1/2 z-10
+          bg-black/40 hover:bg-black/70 text-[var(--color-brand-gold)] transition
+          p-[10px] 
+          rounded-full shadow-lg"
         >
           <FaChevronLeft />
         </button>
         <button
           onClick={() => scroll("right")}
-          className="absolute right-10 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/70 text-[var(--color-brand-gold)] p-3 rounded-full shadow-lg transition"
+          className="absolute right-0 lg:right-25 top-1/2 -translate-y-1/2 z-10 
+          bg-black/40 hover:bg-black/70 text-[var(--color-brand-gold)] transition
+          p-[10px] 
+          rounded-full shadow-lg"
         >
           <FaChevronRight />
         </button>
 
-        {/* Горизонтальний слайдер */}
         <div
           ref={sliderRef}
-          className="flex gap-6 overflow-x-auto scroll-smooth px-12 [&::-webkit-scrollbar]:hidden"
+          className="flex gap-6 overflow-x-auto scroll-smooth 
+          mx-[15px]
+         [&::-webkit-scrollbar]:hidden"
         >
           {reviews.map((r, i) => (
             <div
               key={i}
-              className="bg-foreground text-[var(--foreground)] p-6 w-[350px] shrink-0 rounded-2xl shadow-lg border"
+              className="
+                bg-black/70 text-[var(--foreground)] 
+                p-4 md:p-5 lg:p-7
+                w-[240px] md:w-[300px]
+                h-[380px] md:h-[330px]
+                rounded-2xl shadow-lg border border-black/50 flex-shrink-0
+                flex flex-col gap-[9px]
+              "
             >
-              <p className="font-[Manrope-Bold]">{r.author}</p>
-              <p className="text-sm text-gray-500 mb-3">{r.time}</p>
-              <div className="flex items-center gap-2 mb-4">
+              <p className="text-md font-[Manrope-Bold] tracking-wide">{r.author}</p>
+              <p className="text-sm text-gray-500 font-[Manrope-Regular] tracking-wide">{r.time}</p>
+              <div className="flex items-center gap-2">
                 {[...Array(r.rating)].map((_, idx) => (
-                  <FaStar
-                    key={idx}
-                    className="text-[var(--color-brand-gold)]"
-                  />
+                  <FaStar key={idx} className="text-[var(--color-brand-gold)]" />
                 ))}
               </div>
-              <p className="text-base leading-relaxed">“{r.text}”</p>
-            </div>
+              <p className="text-[14px] font-[Manrope-Medium] tracking-wide leading-relaxed mt-3">“{r.text}”</p>
+             </div>
           ))}
         </div>
 
-        {/* Кнопка на Google */}
-        <div className="text-center mt-12">
+        <div className="bg-[#BE7D00] hover:bg-[#a36600] transition-colors duration-300
+         rounded-lg shadow-md
+         px-2
+         mx-auto
+         py-2
+         mt-1
+         w-[312px]
+         text-center">
           <a
             href="https://www.google.com/maps/place/CarFix+PDR+Expert-+%D0%92%D0%B8%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F+%D0%B2%D0%BC'%D1%8F%D1%82%D0%B8%D0%BD+%D0%B1%D0%B5%D0%B7+%D0%BF%D0%BE%D1%84%D0%B0%D1%80%D0%B1%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#BE7D00] text-[#17181C] font-[Manrope-ExtraBold] tracking-widest uppercase px-6 py-2 rounded-lg shadow-md hover:bg-[#a36600] transition-colors duration-300"
+            className="block
+            text-[#17181C] font-[Manrope-Bold] tracking-widest uppercase text-[15px]
+            w-full
+           "
           >
             Читати всі відгуки на Google
           </a>
