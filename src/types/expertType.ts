@@ -1,4 +1,4 @@
-export type Master = {
+export type Expert = {
   name: string;
   title: string;
   bio: string;
