@@ -9,7 +9,7 @@ export const experts: Expert[] = [
     highlight: "Owner",
   },
   {
-    name: "Арем Зубцов",
+    name: "Атрем Зубцов",
     title: "Майстер PDR",
     bio: "Спеціаліст із видалення вм’ятин будь-якої складності. Відновлює авто до ідеального стану без заміни деталей.",
     img: "/img/masters/master2.jpg",
