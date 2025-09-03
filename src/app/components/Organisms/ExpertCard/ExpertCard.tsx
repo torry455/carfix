@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-interface MasterCardProps {
+interface ExpertCardProps {
   index: number;
   image: string;
   name: string;
@@ -9,14 +9,14 @@ interface MasterCardProps {
   bio: string;
 }
 
-export const MasterCard = ({
+export const ExpertCard = ({
   index,
   image,
   name,
   highlight,
   title,
   bio,
-}: MasterCardProps) => {
+}: ExpertCardProps) => {
   return (
     <article
       key={index}
