@@ -1,4 +1,3 @@
-
 // Liza's version of ParallaxBalls
 
 // "use client";
@@ -138,8 +137,6 @@
 //   );
 // };
 
-
-
 "use client";
 import React, { useRef, useEffect } from "react";
 
@@ -190,7 +187,7 @@ export const ParallaxBalls: React.FC = () => {
       ctx.save();
       ctx.filter = "blur(35px)";
 
-      dropletsRef.current.forEach(d => {
+      dropletsRef.current.forEach((d) => {
         d.x += d.vx;
         d.y += d.vy;
 
@@ -216,7 +213,8 @@ export const ParallaxBalls: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1]"
+      className="fixed top-0 left-0 w-screen h-screen pointer-events-none z-[-1]"
+      style={{ maxWidth: "100vw", maxHeight: "100vh" }}
     />
   );
 };

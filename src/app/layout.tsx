@@ -15,9 +15,9 @@ export default function RootLayout({
   return (
     <Provider store={store}>
       <html lang="uk">
-        <body className="relative text-[#E5E4E4] antialiased bg-[#000]">
+        <body className="relative text-[#E5E4E4] bg-black overflow-x-hidden">
           <ParallaxBalls />
-          <div className="relative z-10 max-w-[1500px] 2xl:m-auto xl:mx-5 md:mx-5 mx-2">
+          <div className="relative z-10 max-w-6xl 2xl:m-auto xl:mx-5 md:mx-5 mx-2">
             <Header />
             {children}
             <Footer />
