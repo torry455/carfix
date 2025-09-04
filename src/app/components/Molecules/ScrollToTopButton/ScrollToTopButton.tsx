@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
 import React, { useState, useEffect } from "react";
-import { ChevronUp } from "lucide-react";
+import { ArrowButton } from "../../Atoms/Buttons/ArrowButton";
 
 export const ScrollToTopButton: React.FC = () => {
   const [visible, setVisible] = useState(false);
@@ -29,13 +29,14 @@ export const ScrollToTopButton: React.FC = () => {
   return (
     <>
       {visible && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-transparent border border-[#BE7D00] text-[#BE7D00] hover:bg-[#BE7D00]/10 transition-colors shadow-lg"
-          aria-label="Scroll to top"
-        >
-          <ChevronUp size={24} />
-        </button>
+        <div className="fixed bottom-10 right-3 md:right-4 xl:bottom-12 xl:right-12">
+          <ArrowButton
+            direction="up"
+            onClickFn={scrollToTop}
+            arrowSize={20}
+            style={'bg-black/40 hover:bg-[#BE7D00]/10 p-4'}
+            />
+        </div>
       )}
     </>
   );
