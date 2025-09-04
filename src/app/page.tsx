@@ -13,7 +13,7 @@ import { Articles } from "./components/Templates/Articles/Articles";
 
 const HomePage: React.FC = () => {
   return (
-    <>
+    <div className="w-full flex flex-col gap-20 mx-auto">
       <HeroSection />
       <AboutCarfix />
       <ExpertsSection />
@@ -25,7 +25,7 @@ const HomePage: React.FC = () => {
       <ContactUsSection />
       <Articles />
       <ScrollToTopButton />
-    </>
+    </div>
   );
 };
 
