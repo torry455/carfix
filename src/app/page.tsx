@@ -1,6 +1,6 @@
 import React from "react";
 import { HeroSection } from "./components/Templates/HeroSection/HeroSection";
-import { AboutSection } from "./components/Templates/AboutSection/AboutSection";
+import { PDRSection } from "./components/Templates/PDRSection/PDRSection";
 import { ServicesSection } from "./components/Templates/ServicesSection/ServicesSection";
 import { ExpertsSection } from "./components/Templates/ExpertsSection/ExpertsSection";
 import { TrainingSection } from "./components/Templates/TrainingSection/TrainingSection";
@@ -13,11 +13,11 @@ import { Articles } from "./components/Templates/Articles/Articles";
 
 const HomePage: React.FC = () => {
   return (
-    <div className="max-w-6xl flex flex-col gap-20 mx-auto">
+    <div className="max-w-6xl flex flex-col gap-20 mx-auto px-5">
       <HeroSection />
       <AboutCarfix />
       <ExpertsSection />
-      <AboutSection />
+      <PDRSection />
       <ServicesSection />
       <TrainingSection />
       <Gallery />

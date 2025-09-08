@@ -1,22 +1,21 @@
-import Image from "next/image";
 import Link from "next/link";
 import { menuItems } from "../../Atoms/Constants/menuItems";
-import { BurgerMenu } from "../../Molecules/BurgerMenu/BurgerMenu";
 import { BurgerMenuButton } from "../../Atoms/Buttons/BurgerMenuButton";
 import { BookButton } from "../../Atoms/Buttons/BookButton";
+import { CarFixIcon } from "../../Atoms/Icons/CarFixIcon";
 
 export const Header: React.FC = () => {
   return (
-    <header className="bg-[#fff]/3 font-[Manrope-Bold] tracking-widest uppercase backdrop-blur-xl rounded-[50px] text-[#E5E4E4] py-4 px-6 w-full z-50 sticky top-5 max-w-[1500px]">
-      <div className="max-w-[1500px] mx-auto xlnav:mx-3 flex justify-between items-center">
-        <Link href="/" className="flex-shrink-0" aria-label="Carfix Home Page">
-          <Image
-            src="/img/carfix-logo.png"
-            alt="Carfix Logo"
-            width={75}
-            height={25}
-            priority
-          />
+    <header
+      className="bg-[#fff]/3 backdrop-blur-xl rounded-[50px]
+                       font-[Manrope-Bold] tracking-widest uppercase text-[#E5E4E4]
+                       py-2 px-6 md:py-3
+                       max-w-6xl mx-auto
+                       z-50 fixed top-5 left-4 right-4"
+    >
+      <div className="w-full flex flex-row justify-between items-center">
+        <Link href="/" aria-label="Carfix Home Page">
+          <CarFixIcon />
         </Link>
 
         <nav className="hidden xlnav:flex items-center gap-8 text-lg font-medium">
@@ -43,13 +42,10 @@ export const Header: React.FC = () => {
             />
           </div>
         </nav>
-        <div className="xlnav:hidden fixed top5 right-7 z-[150]">
+        <div className="xlnav:hidden z-[150]">
           <BurgerMenuButton />
         </div>
-
-        <BurgerMenu />
       </div>
     </header>
   );
 };
-
