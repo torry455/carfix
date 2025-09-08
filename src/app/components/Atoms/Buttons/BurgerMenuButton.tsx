@@ -8,6 +8,6 @@ export const BurgerMenuButton = () => {
   const dispatch = useDispatch();
 
   return (
-    <Hamburger toggled={isMenuOpen} toggle={() => dispatch(toggleMenu())} />
+    <Hamburger toggled={isMenuOpen} toggle={() => dispatch(toggleMenu())} size={28} />
   );
 };
