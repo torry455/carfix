@@ -1,27 +1,21 @@
-import Image from "next/image";
 import Link from "next/link";
 import { menuItems } from "../../Atoms/Constants/menuItems";
 import { BurgerMenuButton } from "../../Atoms/Buttons/BurgerMenuButton";
 import { BookButton } from "../../Atoms/Buttons/BookButton";
+import { CarFixIcon } from "../../Atoms/Icons/CarFixIcon";
 
 export const Header: React.FC = () => {
   return (
     <header
       className="bg-[#fff]/3 backdrop-blur-xl rounded-[50px]
                        font-[Manrope-Bold] tracking-widest uppercase text-[#E5E4E4]
-                       py-2 px-6 xlnav:px-6
+                       py-2 px-6 md:py-3
                        max-w-6xl mx-auto
                        z-50 fixed top-5 left-4 right-4"
     >
       <div className="w-full flex flex-row justify-between items-center">
         <Link href="/" aria-label="Carfix Home Page">
-          <Image
-            src="/img/carfix-logo.png"
-            alt="Carfix Logo"
-            width={65}
-            height={20}
-            priority
-          />
+          <CarFixIcon />
         </Link>
 
         <nav className="hidden xlnav:flex items-center gap-8 text-lg font-medium">
