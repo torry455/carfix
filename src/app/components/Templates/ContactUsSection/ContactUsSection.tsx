@@ -2,7 +2,10 @@ import { ContactForm } from "../../Organisms/ContactForm/ContactForm";
 
 export const ContactUsSection = () => {
   return (
-    <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-16 flex flex-col lg:flex-row gap-8">
+    <section
+      id="contacts"
+      className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-16 flex flex-col lg:flex-row gap-8"
+    >
       {/* Контакти + карти */}
       <div className="flex-1 flex flex-col lg:flex-row gap-8 bg-[#1c1e22] rounded-lg p-8 shadow-lg">
         {/* Ліва частина: контакти */}
@@ -151,6 +154,6 @@ export const ContactUsSection = () => {
       <div className="flex-1 bg-[#1c1e22] rounded-lg p-8 shadow-lg">
         <ContactForm />
       </div>
-    </div>
+    </section>
   );
 };
