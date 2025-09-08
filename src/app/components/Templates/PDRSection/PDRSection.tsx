@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-export const AboutSection: React.FC = () => {
+export const PDRSection: React.FC = () => {
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -28,15 +28,15 @@ export const AboutSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className={`max-w-[1600px] mx-auto transition-all duration-700 min-h-[1000px] px-5
+      className={`max-w-6xl mx-auto transition-all duration-700
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
       `}
     >
-      <div className="bg-[#000]/ text-[#E5E4E4] py-20 max-w-[1600px] mx-auto">
+      <div className="bg-[#000]/ text-[#E5E4E4] py-20 w-full mx-auto">
         <h2 className="text-[70px] font-[Manrope-ExtraBold] uppercase mb-8 text-[#BE7D00] tracking-wide m-auto">
           технологія PDR - що це?
         </h2>
-        <p className="max-w-4xl text-[#CFCFCF] leading-relaxed text-[20px] uppercase font-[Manrope-Regular] tracking-widest">
+        <p className="text-[#CFCFCF] leading-relaxed text-[20px] uppercase font-[Manrope-Regular] tracking-widest">
           Технологія PDR - це сучасний та комплексний підхід до виправлення
           дефектів кузова, спричиненого різними чинниками.
         </p>

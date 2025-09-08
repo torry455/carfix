@@ -6,6 +6,7 @@ import { Header } from "./components/Organisms/Header/Header";
 import { Footer } from "./components/Organisms/Footer/Footer";
 import "./globals.css";
 import { ParallaxBalls } from "./components/Molecules/ParallaxBalls/ParallaxBalls";
+import { BurgerMenu } from "./components/Molecules/BurgerMenu/BurgerMenu";
 
 export default function RootLayout({
   children,
@@ -17,11 +18,12 @@ export default function RootLayout({
       <html lang="uk">
         <body className="relative text-[#E5E4E4] bg-black overflow-x-hidden">
           <ParallaxBalls />
-          <div className="relative z-10 max-w-6xl 2xl:m-auto xl:mx-5 md:mx-5 mx-2">
+          <div className="relative max-w-6xl mx-auto">
             <Header />
             {children}
             <Footer />
           </div>
+          <BurgerMenu />
         </body>
       </html>
     </Provider>
