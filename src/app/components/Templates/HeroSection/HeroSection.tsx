@@ -1,18 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { VideoGallerySlider } from "../../Molecules/GallerySlider/GallerySlider";
 import { BookButton } from "../../Atoms/Buttons/BookButton";
 
 export const HeroSection: React.FC = () => {
   const [visible, setVisible] = useState(false);
-
-  const galleryVideos = [
-    "videos/heroVideo/video1.mp4",
-    "videos/heroVideo/video2.mp4",
-    "videos/heroVideo/video3.mp4",
-    "videos/heroVideo/video4.mp4",
-    "videos/heroVideo/video5.mp4",
-  ];
 
   useEffect(() => {
     setTimeout(() => setVisible(true), 100);
@@ -124,7 +115,18 @@ export const HeroSection: React.FC = () => {
           </div>
         </div>
         <div className="flex-1 w-full h-full min-h-[300px] rounded-3xl shadow-2xl border-4 border-[#BE7D00] overflow-hidden box-border relative z-10 flex items-center justify-center">
-          <VideoGallerySlider videos={galleryVideos} width={600} height={400} />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-label="Carfix hero background video"
+            className="absolute top-0 left-0 object-cover -z-1"
+            onContextMenu={(e) => e.preventDefault()}
+          >
+            <source src="/videos/carfix-hero-vid.mp4" type="video/mp4"></source>
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </section>
