@@ -36,7 +36,9 @@ export const AboutCarfix: React.FC = () => {
       </div>
 
       <div className="w-full lg:w-1/2 text-[color-brand-gray]">
-        <h2 className="text-[70px] font-[Manrope-ExtraBold] uppercase mb-6 text-[var(--color-brand-gold)] tracking-wide">
+        <h2 className="text-[32px] md:text-[45px]
+                       font-[Manrope-ExtraBold] text-left uppercase 
+                       tracking-wider text-[var(--color-brand-gold)]">
           Що таке Carfix?
         </h2>
 

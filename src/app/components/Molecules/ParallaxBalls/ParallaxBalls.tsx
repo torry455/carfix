@@ -185,7 +185,8 @@ export const ParallaxBalls: React.FC = () => {
 
       // Малюємо краплі з сильним blur
       ctx.save();
-      ctx.filter = "blur(35px)";
+      // ctx.filter = "blur(35px)";
+      ctx.filter = window.innerWidth < 768 ? "blur(15px)" : "blur(35px)";
 
       dropletsRef.current.forEach((d) => {
         d.x += d.vx;

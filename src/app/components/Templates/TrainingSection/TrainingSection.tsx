@@ -22,11 +22,13 @@ export const TrainingSection: React.FC = () => {
         </div>
 
         <div>
-          <h2 className="text-[70px] sm:text-[50px] font-[Manrope-ExtraBold] text-[#BE7D00] mb-6 uppercase tracking-widest">
+          <h2 className="text-[32px] md:text-[45px]
+                       font-[Manrope-ExtraBold] text-left uppercase 
+                       tracking-wider text-[var(--color-brand-gold)]">
             Навчання
           </h2>
 
-          <p className="text-[#CFCFCF] mb-6 text-lg leading-relaxed uppercase tracking-widest">
+          <p className="text-[var(--text-gray)] mb-6 ">
             Ми працюємо на результат. Наш підхід — це баланс практики та теорії,
             який допоможе вам стати професіоналом у сфері PDR.
           </p>
@@ -40,11 +42,9 @@ export const TrainingSection: React.FC = () => {
             ))}
           </ul>
 
-          <p className="text-[#BFC0C0] mb-8">
+          <p className="text-[var(--text-gray)] mb-8">
             Від вас потрібні лише мотивація, терпіння та бажання навчитись. Не
-            відкладайте на завтра те, що можна почати сьогодні. Отримайте нові
-            знання та вміння, які дозволять вам заробляти в сфері PDR на рівні
-            ІТ-спеціалістів.
+            відкладайте на завтра те, що можна почати сьогодні.
           </p>
 
           <a

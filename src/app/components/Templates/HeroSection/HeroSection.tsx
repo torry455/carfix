@@ -25,11 +25,11 @@ export const HeroSection: React.FC = () => {
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
       `}
     >
-      <h1 className="lg:text-[100px] md:text-[70px] sm:text-[55px] text-[36px] font-[Manrope-ExtraBold] leading-tight tracking-[4px] uppercase text-center drop-shadow-lg mb-10 mt-40">
-        Видалення вм&apos;ятин без пофарбування
-      </h1>
       <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full uppercase font-[Manrope-Bold] flex-1 h-full">
         <div className="flex-1 w-full h-full flex flex-col justify-between py-0">
+      <h1 className=" text-[36px] font-[Manrope-ExtraBold] leading-tight tracking-[4px] uppercase text-left drop-shadow-lg ">
+        Видалення вм&apos;ятин без пофарбування
+      </h1>
           <ul className="text-lg text-[#CFCFCF] font-[Manrope-Bold] space-y-9 my-10">
             <li className="flex items-center gap-3">
               <svg
@@ -112,7 +112,7 @@ export const HeroSection: React.FC = () => {
               />
             </div>
             <button
-              className="border border-[#BE7D00] text-[#BE7D00] uppercase font-[Manrope-Bold] px-6 py-3 rounded-xl hover:bg-[#BE7D0020] transition-colors duration-300 text-base md:text-lg"
+              className="border border-[#BE7D00] text-[#BE7D00] uppercase font-[Manrope-Bold] px-6 py-2 rounded-full hover:bg-[#BE7D0020] transition-colors duration-300 text-base md:text-lg"
               onClick={() => {
                 document
                   .getElementById("services")
@@ -130,3 +130,9 @@ export const HeroSection: React.FC = () => {
     </section>
   );
 };
+
+
+
+
+
+

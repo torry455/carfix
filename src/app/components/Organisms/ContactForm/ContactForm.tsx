@@ -66,7 +66,7 @@ export const ContactForm: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-[#1c1e22] rounded-lg shadow-lg flex flex-col gap-4 relative"
+      className="bg-black/70 rounded-lg shadow-lg flex flex-col gap-4 relative"
     >
       <h4 className="text-2xl font-[Manrope-ExtraBold] text-[#BE7D00] mb-4">
         Записатись на послугу
@@ -82,7 +82,7 @@ export const ContactForm: React.FC = () => {
           value={formData.name}
           onChange={handleChange}
           placeholder="Ім'я"
-          className="mt-1 block w-full rounded-md bg-[#111215] border border-[#555] text-white px-3 py-2"
+          className="mt-1 block w-full rounded-md bg-black border border-[#555] text-white px-3 py-2"
           required
         />
       </label>
@@ -97,7 +97,7 @@ export const ContactForm: React.FC = () => {
           value={formData.phone}
           onChange={handleChange}
           placeholder="+380..."
-          className="mt-1 block w-full rounded-md bg-[#111215] border border-[#555] text-white px-3 py-2"
+          className="mt-1 block w-full rounded-md bg-black border border-[#555] text-white px-3 py-2"
           required
         />
       </label>
@@ -110,7 +110,7 @@ export const ContactForm: React.FC = () => {
           onChange={handleChange}
           placeholder="Ваш запит або коментар"
           rows={3}
-          className="mt-1 block w-full rounded-md bg-[#111215] border border-[#555] text-white px-3 py-2 resize-none"
+          className="mt-1 block w-full rounded-md bg-black border border-[#555] text-white px-3 py-2 resize-none"
         />
       </label>
 {/* 
@@ -155,7 +155,7 @@ export const ContactForm: React.FC = () => {
 
       <button
         type="submit"
-        className="mt-4 w-full bg-[#BE7D00] text-[#17181C] font-semibold py-2 rounded-md hover:bg-[#d28f0a] transition-colors"
+        className="mt-4 w-full bg-[#BE7D00] text-[#17181C] uppercase font-semibold py-2 rounded-full shadow-md hover:bg-[#a36600] transition-colors duration-300"
       >
         Відправити
       </button>
