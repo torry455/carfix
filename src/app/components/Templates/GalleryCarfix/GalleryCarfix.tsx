@@ -194,18 +194,15 @@
 
 // export default GalleryCarfix;
 
-
-
-
-
-
-
-
 "use client";
 
 import Image from "next/image";
 import React, { useState, useEffect, useMemo } from "react";
-import { galleryCategories, BeforeAfterItem, ProcessItem } from "./GalleryOptions";
+import {
+  galleryCategories,
+  BeforeAfterItem,
+  ProcessItem,
+} from "./GalleryOptions";
 import { ScrollToTopButton } from "../../Molecules/ScrollToTopButton/ScrollToTopButton";
 import { BeforeAfterCard } from "./BeforeAfterCard";
 import { ProcessCard } from "./ProcessCard";
@@ -217,10 +214,10 @@ type LightboxContent =
   | { type: "photo"; src: string; alt: string }
   | { type: "video"; src: string; alt: string };
 
-  
-
 const GalleryCarfix: React.FC = () => {
-  const [showAfterMap, setShowAfterMap] = useState<{ [key: string]: boolean }>({});
+  const [showAfterMap, setShowAfterMap] = useState<{ [key: string]: boolean }>(
+    {}
+  );
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   // Флетимо всі елементи для lightbox
@@ -239,8 +236,16 @@ const GalleryCarfix: React.FC = () => {
           } else {
             const processItem = item as ProcessItem;
             return processItem.video
-              ? { type: "video", src: processItem.video, alt: processItem.description } as LightboxContent
-              : { type: "photo", src: processItem.photo!, alt: processItem.description } as LightboxContent;
+              ? ({
+                  type: "video",
+                  src: processItem.video,
+                  alt: processItem.description,
+                } as LightboxContent)
+              : ({
+                  type: "photo",
+                  src: processItem.photo!,
+                  alt: processItem.description,
+                } as LightboxContent);
           }
         })
       ),
@@ -260,9 +265,13 @@ const GalleryCarfix: React.FC = () => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (lightboxIndex === null) return;
       if (e.key === "Escape") closeLightbox();
-      else if (e.key === "ArrowRight") setLightboxIndex((prev) => (prev! + 1) % flatGalleryItems.length);
+      else if (e.key === "ArrowRight")
+        setLightboxIndex((prev) => (prev! + 1) % flatGalleryItems.length);
       else if (e.key === "ArrowLeft")
-        setLightboxIndex((prev) => (prev! - 1 + flatGalleryItems.length) % flatGalleryItems.length);
+        setLightboxIndex(
+          (prev) =>
+            (prev! - 1 + flatGalleryItems.length) % flatGalleryItems.length
+        );
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -278,7 +287,9 @@ const GalleryCarfix: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 py-12">
       {galleryCategories.map((category, catIdx) => (
         <div key={catIdx} className="mb-12">
-          <h2 className="text-2xl font-bold text-[#BE7D00] mb-6">{category.name}</h2>
+          <h2 className="text-2xl font-bold text-[#BE7D00] mb-6">
+            {category.name}
+          </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {category.items.map((item, idx) => {
               const key = `${catIdx}-${idx}`;
@@ -287,8 +298,10 @@ const GalleryCarfix: React.FC = () => {
                   (el.type === "before-after" &&
                     "before" in item &&
                     el.before === (item as BeforeAfterItem).before) ||
-                  (el.type === "photo" && (item as ProcessItem).photo === el.src) ||
-                  (el.type === "video" && (item as ProcessItem).video === el.src)
+                  (el.type === "photo" &&
+                    (item as ProcessItem).photo === el.src) ||
+                  (el.type === "video" &&
+                    (item as ProcessItem).video === el.src)
               );
 
               if (category.type === "before-after" && "before" in item) {
@@ -307,7 +320,13 @@ const GalleryCarfix: React.FC = () => {
                 );
               } else if (category.type === "process") {
                 const processItem = item as ProcessItem;
-                return <ProcessCard key={key} item={processItem} onClick={() => openLightbox(globalIndex)} />;
+                return (
+                  <ProcessCard
+                    key={key}
+                    item={processItem}
+                    onClick={() => openLightbox(globalIndex)}
+                  />
+                );
               }
             })}
           </div>
@@ -315,109 +334,135 @@ const GalleryCarfix: React.FC = () => {
       ))}
 
       {/* Lightbox */}
-{lightboxIndex !== null && (
-  <div
-    className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-6"
-    onClick={closeLightbox}
-  >
-    <div className="relative w-full max-w-5xl flex items-center" onClick={(e) => e.stopPropagation()}>
-      
-      {/* Ліва кнопка */}
-      <LeftArrowButton
-        onClick={() =>
-          setLightboxIndex((prev) => (prev! - 1 + flatGalleryItems.length) % flatGalleryItems.length)
-        }
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-20"
-      />
+      {lightboxIndex !== null && (
+        <div
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-6"
+          onClick={closeLightbox}
+        >
+          <div
+            className="relative w-full max-w-5xl flex items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Ліва кнопка */}
+            <LeftArrowButton
+              onClick={() =>
+                setLightboxIndex(
+                  (prev) =>
+                    (prev! - 1 + flatGalleryItems.length) %
+                    flatGalleryItems.length
+                )
+              }
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-20"
+            />
 
-      {/* Контент */}
-      <div className="flex-1 flex justify-center items-center">
-        <div className="relative max-w-full max-h-[80vh] flex justify-center items-center">
-          
-          {/* Before/After */}
-          {flatGalleryItems[lightboxIndex]?.type === "before-after" && (() => {
-            const item = flatGalleryItems[lightboxIndex];
-            if (item.type === "before-after") {
-              return (
-                <div className="flex flex-col md:flex-row gap-4">
-                  {["before", "after"].map((key) => (
-                    <div key={key} className="flex-1 flex flex-col flex-center items-center">
-                      <div className="w-full h-[70vh] rounded-2xl overflow-hidden">
-                        <Image
-                          src={key === "before" ? item.before : item.after}
-                          alt={`${key === "before" ? "До" : "Після"} — ${item.title}`}
-                          width={800}
-                          height={600}
-                          className="w-full object-contain rounded-2xl"
-                        />
-                      </div>
-                      <p className="text-center text-white mt-2">{key === "before" ? "До" : "Після"}</p>
+            {/* Контент */}
+            <div className="flex-1 flex justify-center items-center">
+              <div className="relative max-w-full max-h-[80vh] flex justify-center items-center">
+                {/* Before/After */}
+                {flatGalleryItems[lightboxIndex]?.type === "before-after" &&
+                  (() => {
+                    const item = flatGalleryItems[lightboxIndex];
+                    if (item.type === "before-after") {
+                      return (
+                        <div className="flex flex-col md:flex-row gap-4">
+                          {["before", "after"].map((key) => (
+                            <div
+                              key={key}
+                              className="flex-1 flex flex-col flex-center items-center"
+                            >
+                              <div className="w-full h-[70vh] rounded-2xl overflow-hidden">
+                                <Image
+                                  src={
+                                    key === "before" ? item.before : item.after
+                                  }
+                                  alt={`${
+                                    key === "before" ? "До" : "Після"
+                                  } — ${item.title}`}
+                                  width={800}
+                                  height={600}
+                                  className="w-full object-contain rounded-2xl"
+                                />
+                              </div>
+                              <p className="text-center text-white mt-2">
+                                {key === "before" ? "До" : "Після"}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      );
+                    }
+                    return null;
+                  })()}
+
+                {/* Photo */}
+                {flatGalleryItems[lightboxIndex]?.type === "photo" && (
+                  <div className="flex flex-col items-center">
+                    <div className="h-[75vh] rounded-2xl overflow-hidden">
+                      <Image
+                        src={flatGalleryItems[lightboxIndex].src}
+                        alt={flatGalleryItems[lightboxIndex].alt}
+                        width={1200}
+                        height={800}
+                        className="w-full h-full object-contain rounded-2xl"
+                      />
                     </div>
-                  ))}
-                </div>
-              );
-            }
-            return null;
-          })()}
+                    <p className="text-center text-white mt-4">
+                      {flatGalleryItems[lightboxIndex].alt}
+                    </p>
+                  </div>
+                )}
 
-          {/* Photo */}
-          {flatGalleryItems[lightboxIndex]?.type === "photo" && (
-            <div className="flex flex-col items-center">
-              <div className="h-[75vh] rounded-2xl overflow-hidden">
-                <Image
-                  src={flatGalleryItems[lightboxIndex].src}
-                  alt={flatGalleryItems[lightboxIndex].alt}
-                  width={1200}
-                  height={800}
-                  className="w-full h-full object-contain rounded-2xl"
-                />
+                {/* Video */}
+                {flatGalleryItems[lightboxIndex]?.type === "video" && (
+                  <div className="flex flex-col items-center">
+                    <div className="w-full h-[75vh] rounded-2xl overflow-hidden">
+                      <video
+                        key={flatGalleryItems[lightboxIndex].src}
+                        controls
+                        autoPlay
+                        muted
+                        playsInline
+                        className="w-full h-full object-contain bg-black rounded-2xl"
+                      >
+                        <source
+                          src={flatGalleryItems[lightboxIndex].src}
+                          type="video/mp4"
+                        />
+                        <source
+                          src={flatGalleryItems[lightboxIndex].src}
+                          type="video/quicktime"
+                        />
+                        Ваш браузер не підтримує відео.
+                      </video>
+                    </div>
+                    <p className="text-center text-white mt-4">
+                      {flatGalleryItems[lightboxIndex].alt}
+                    </p>
+                  </div>
+                )}
               </div>
-              <p className="text-center text-white mt-4">{flatGalleryItems[lightboxIndex].alt}</p>
             </div>
-          )}
 
-          {/* Video */}
-          {flatGalleryItems[lightboxIndex]?.type === "video" && (
-            <div className="flex flex-col items-center">
-              <div className="w-full h-[75vh] rounded-2xl overflow-hidden">
-                <video
-                  key={flatGalleryItems[lightboxIndex].src}
-                  controls
-                  autoPlay
-                  muted
-                  playsInline
-                  className="w-full h-full object-contain bg-black rounded-2xl"
-                >
-                  <source src={flatGalleryItems[lightboxIndex].src} type="video/mp4" />
-                  <source src={flatGalleryItems[lightboxIndex].src} type="video/quicktime" />
-                  Ваш браузер не підтримує відео.
-                </video>
-              </div>
-              <p className="text-center text-white mt-4">{flatGalleryItems[lightboxIndex].alt}</p>
-            </div>
-          )}
+            {/* Права кнопка */}
+            <RightArrowButton
+              onClick={() =>
+                setLightboxIndex(
+                  (prev) => (prev! + 1) % flatGalleryItems.length
+                )
+              }
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-20"
+            />
+
+            {/* Кнопка закриття */}
+            <button
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white text-3xl font-bold z-30 hover:text-[#BE7D00] transition-colors"
+              onClick={closeLightbox}
+            >
+              ✕
+            </button>
+          </div>
         </div>
-      </div>
-
-      {/* Права кнопка */}
-      <RightArrowButton
-        onClick={() =>
-          setLightboxIndex((prev) => (prev! + 1) % flatGalleryItems.length)
-        }
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-20"
-      />
-
-      {/* Кнопка закриття */}
-      <button
-        className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white text-3xl font-bold z-30 hover:text-[#BE7D00] transition-colors"
-        onClick={closeLightbox}
-      >
-        ✕
-      </button>
-    </div>
-  </div>
-)}
-
+      )}
 
       <ScrollToTopButton />
     </div>
@@ -425,15 +470,3 @@ const GalleryCarfix: React.FC = () => {
 };
 
 export default GalleryCarfix;
-
-
-
-
-
-
-
-
-
-
-
-

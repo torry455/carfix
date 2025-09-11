@@ -3,7 +3,7 @@ import { ExpertCard } from "../../Organisms/ExpertCard/ExpertCard";
 
 export const ExpertsSection = () => {
   return (
-    <section id="masters" className="py-20 max-w-6xl mx-auto">
+    <section id="masters" className="max-w-6xl mx-auto">
       <div className="max-w-6xl 
                       mx-auto 
                       px-6
