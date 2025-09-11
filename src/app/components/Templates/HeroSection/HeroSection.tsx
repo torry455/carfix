@@ -21,6 +21,10 @@ export const HeroSection: React.FC = () => {
         </span>
       </h1>
 
+      {/* <h1 className=" text-[36px] font-[Manrope-ExtraBold] leading-tight tracking-[4px] uppercase text-left drop-shadow-lg ">
+        Видалення вм&apos;ятин без пофарбування
+      </h1> */}
+
       <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full uppercase font-[Manrope-Bold] flex-1 h-full">
         <div className="flex flex-col gap-10">
           <ul className="text-sm text-[#CFCFCF] font-[Manrope-Medium] space-y-6 leading-relaxed tracking-widest">
@@ -46,7 +50,7 @@ export const HeroSection: React.FC = () => {
               />
             </div>
             <button
-              className="border border-[#BE7D00] text-[#BE7D00] uppercase font-[Manrope-ExtraBold] px-6 py-2 rounded-xl hover:bg-[#BE7D0020] transition-colors duration-300 text-base text-md tracking-wide md:text-lg"
+              className="border border-[#BE7D00] text-[#BE7D00] uppercase font-[Manrope-ExtraBold] px-6 py-2 rounded-full hover:bg-[#BE7D0020] transition-colors duration-300 text-base text-md tracking-wide md:text-lg"
               onClick={() => {
                 document
                   .getElementById("services")
@@ -75,3 +79,9 @@ export const HeroSection: React.FC = () => {
     </section>
   );
 };
+
+
+
+
+
+

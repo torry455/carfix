@@ -1,27 +1,24 @@
 import React from "react";
+import { Check } from "lucide-react";
+import { ServiceProps } from "@/types/servicesProps";
 
-interface ServiceProps {
-  title: string;
-  description?: string;
-  items?: string[];
-}
-
-const ServiceCard: React.FC<ServiceProps> = ({ title, description, items }) => {
+const ServiceCard: React.FC<ServiceProps> = ({ title, items }) => {
   return (
-    <div className="bg-[#222327] rounded-2xl p-8 border border-[#3D3D3D] hover:scale-105 transition-transform duration-300 font-[Manrope-Regular]">
-      <h3 className="text-[23px] font-[Manrope-Medium] uppercase tracking-wider mb-4">
+    <div className="bg-black/70 rounded-2xl p-8  hover:scale-105 transition-transform duration-300">
+      <h3 className="text-[23px] font-[Manrope-Medium] uppercase tracking-wider mb-6">
         {title}
       </h3>
-      {description && (
-        <p className="text-[16px] leading-relaxed text-gray-300 tracking-wide font-[Manrope-Medium]">
-          {description}
-        </p>
-      )}
+
 
       {items && (
-        <ul className="custom-list pl-5 space-y-3 text-gray-300 uppercase font-[Manrope-Medium] tracking-wider">
+        <ul className="space-y-3 text-gray-300 font-[Manrope-Medium] tracking-wide">
           {items.map((item, i) => (
-            <li key={i}>{item}</li>
+                    <li key={i} className="flex items-center gap-2">
+                      <span className="flex-shrink-0 flex items-center justify-center w-5 h-5">
+                        <Check size={20} className="text-[#BE7D00]" />
+                      </span>
+                      <span>{item}</span>
+                    </li>
           ))}
         </ul>
       )}
