@@ -8,7 +8,11 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative flex flex-col gap-[2rem] items-center justify-center text-[#E5E4E4] max-w-6xl mx-auto overflow-hidden animate-fadeInUp"
+      className="flex flex-col gap-[2rem] items-center justify-center 
+                 text-[#E5E4E4] 
+                 max-w-6xl 
+                 mx-auto px-1
+                 animate-fadeInUp"
     >
       <h1
         className="text-[35px] md:text-[70px] lg:text-[100px] font-[Manrope-ExtraBold] text-center uppercase text-[#E5E4E4] 
@@ -61,14 +65,14 @@ export const HeroSection: React.FC = () => {
             </button>
           </div>
         </div>
-        <div className="flex-1 w-full h-full min-h-[300px] rounded-3xl shadow-2xl border-4 border-[#BE7D00] overflow-hidden box-border relative z-10 flex items-center justify-center">
+        <div className="flex-1 w-[330px] h-[300px] min-h-[300px] rounded-3xl shadow-2xl border-4 border-[#BE7D00] overflow-hidden box-border relative z-10 flex items-center justify-center">
           <video
             autoPlay
             muted
             loop
             playsInline
             aria-label="Carfix hero background video"
-            className="absolute top-0 left-0 object-cover -z-1"
+            className="absolute inset-0 w-full h-full object-cover -z-1"
             onContextMenu={(e) => e.preventDefault()}
           >
             <source src="/videos/carfix-hero-vid.mp4" type="video/mp4"></source>
