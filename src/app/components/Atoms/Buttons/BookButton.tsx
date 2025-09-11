@@ -1,7 +1,6 @@
 type BookButtonProps = {
   buttonName: string;
   onClickFn: () => void;
-  
 };
 
 export const BookButton: React.FC<BookButtonProps> = ({
