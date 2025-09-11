@@ -13,7 +13,7 @@ import { Articles } from "./components/Templates/Articles/Articles";
 
 const HomePage: React.FC = () => {
   return (
-    <div className="max-w-6xl flex flex-col gap-20 mx-auto px-5">
+    <div className="max-w-6xl flex flex-col gap-30 sm:gap-50 mx-auto px-5">
       <HeroSection />
       <AboutCarfixSection />
       <ExpertsSection />
