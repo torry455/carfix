@@ -28,11 +28,9 @@ export const PDRSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className={`max-w-6xl mx-auto transition-all duration-700
-        ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
-      `}
+      className="max-w-6xl mx-auto transition-all duration-700 animate-fadeInUp"
     >
-      <div className="bg-[#000]/ text-[#E5E4E4] py-20 max-w-[1600px] mx-auto">
+      <div className="bg-[#000]/ text-[#E5E4E4] max-w-[1600px] mx-auto">
         <h2 className="text-[32px] md:text-[45px]
                        font-[Manrope-ExtraBold] text-left uppercase 
                        tracking-wider text-[var(--color-brand-gold)]">

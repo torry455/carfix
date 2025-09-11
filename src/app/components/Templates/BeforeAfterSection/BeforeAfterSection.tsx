@@ -8,7 +8,7 @@ import BeforeAfterSlider from "./BeforeAfterSlider";
 import { videoPairs } from "./VideoPairsOptiona";
 
 
-const Gallery: React.FC = () => {
+export const BeforeAfterSection: React.FC = () => {
   const [sliderPosition, setSliderPosition] = useState(50);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,11 +37,11 @@ const Gallery: React.FC = () => {
   return (
     <div
       id="gallery"
-      className="relative w-full max-w-6xl mx-auto py-10 md:py-16 px-4 sm:px-6 lg:px-8 select-none"
+      className="relative w-full max-w-6xl mx-auto select-none animate-fadeInUp"
     >
       {/* Заголовок */}
       <h2 className="text-[32px] md:text-[45px]
-                       font-[Manrope-ExtraBold] text-center py-10 uppercase 
+                       font-[Manrope-ExtraBold] text-center pb-10 uppercase 
                        tracking-wider text-[var(--color-brand-gold)]">
         Наше &quot;До та Після&quot;
       </h2>
@@ -75,5 +75,3 @@ const Gallery: React.FC = () => {
     </div>
   );
 };
-
-export default Gallery;
