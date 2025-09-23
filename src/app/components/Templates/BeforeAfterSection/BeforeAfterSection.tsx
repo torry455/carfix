@@ -2,10 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import LeftArrowButton from "../../Atoms/Buttons/LeftArrowBtn";
-import RightArrowButton from "../../Atoms/Buttons/RightArrowBn";
 import BeforeAfterSlider from "./BeforeAfterSlider";
 import { videoPairs } from "./VideoPairsOptiona";
+import { ArrowButton } from "../../Atoms/Buttons/ArrowButton";
 
 
 export const BeforeAfterSection: React.FC = () => {
@@ -47,16 +46,16 @@ export const BeforeAfterSection: React.FC = () => {
       </h2>
 
       {/* Основний блок */}
-      <div className="relative flex items-center gap-4 sm:gap-6 lg:gap-8">
-        <LeftArrowButton onClick={prevSlide} />
-        <BeforeAfterSlider
-          before={before}
-          after={after}
-          sliderPosition={sliderPosition}
-          setSliderPosition={setSliderPosition}
-        />
-        <RightArrowButton onClick={nextSlide} />
-      </div>
+<div className="relative flex items-center gap-4 sm:gap-6 lg:gap-8">
+  <ArrowButton direction="left" onClickFn={prevSlide} />
+  <BeforeAfterSlider
+    before={before}
+    after={after}
+    sliderPosition={sliderPosition}
+    setSliderPosition={setSliderPosition}
+  />
+  <ArrowButton direction="right" onClickFn={nextSlide} />
+</div>
 
       {/* Підписи */}
       <div className="flex justify-between mt-3 text-xs sm:text-sm md:text-base font-[Manrope-Bold] uppercase tracking-widest text-[#CFCFCF] max-w-[calc(100%-100px)] mx-auto">

@@ -2,10 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import LeftArrowButton from "../../Atoms/Buttons/LeftArrowBtn";
-import RightArrowButton from "../../Atoms/Buttons/RightArrowBn";
+
 import BeforeAfterSlider from "./BeforeAfterSlider";
 import { videoPairs } from "./VideoPairsOptiona";
+import { ArrowButton } from "../../Atoms/Buttons/ArrowButton";
 
 
 const Gallery: React.FC = () => {
@@ -48,14 +48,14 @@ const Gallery: React.FC = () => {
 
       {/* Основний блок */}
       <div className="relative flex items-center gap-4 sm:gap-6 lg:gap-8">
-        <LeftArrowButton onClick={prevSlide} />
+        <ArrowButton onClickFn={prevSlide} />
         <BeforeAfterSlider
           before={before}
           after={after}
           sliderPosition={sliderPosition}
           setSliderPosition={setSliderPosition}
         />
-        <RightArrowButton onClick={nextSlide} />
+        <ArrowButton onClickFn={nextSlide} />
       </div>
 
       {/* Підписи */}
