@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-export const AboutCarfix: React.FC = () => {
+export const AboutCarfixSection: React.FC = () => {
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -22,9 +22,7 @@ export const AboutCarfix: React.FC = () => {
     <section
       id="about"
       ref={sectionRef}
-      className={`max-w-[1600px] mx-auto transition-all duration-700 px-5 py-10 min-h-screen flex flex-col lg:flex-row items-center gap-12
-        ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
-      `}
+      className="max-w-6xl mx-auto transition-all duration-700 flex flex-col lg:flex-row items-center gap-12 animate-fadeInUp"
     >
       <div className="relative w-full lg:w-1/2 h-[500px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
         <Image

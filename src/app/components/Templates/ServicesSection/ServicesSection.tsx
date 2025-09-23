@@ -5,10 +5,10 @@ import ServiceCard from "./ServiceCard";
 
 export const ServicesSection: React.FC = () => {
   return (
-    <section id="services" className="text-[#E5E4E4] pt-20 px-5 min-h-[1000px]">
+    <section id="services" className="text-[#E5E4E4] animate-fadeInUp">
       <div className="max-w-6xl mx-auto">
         <h2
-          className="text-[32px] md:text-[45px] font-[Manrope-ExtraBold] text-center uppercase tracking-wider text-[var(--color-brand-gold)] py-10"
+          className="text-[32px] md:text-[45px] font-[Manrope-ExtraBold] text-center uppercase tracking-wider text-[var(--color-brand-gold)] pb-10"
         >
           Послуги
         </h2>

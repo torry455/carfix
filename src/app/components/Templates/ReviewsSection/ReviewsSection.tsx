@@ -1,8 +1,9 @@
 "use client";
 
 import { useRef } from "react";
-import { FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { reviews } from "../../Atoms/Constants/reviews";
+import { ReviewCard } from "./ReviewCard";
 
 export const ReviewsSection: React.FC = () => {
   const sliderRef = useRef<HTMLDivElement | null>(null);
@@ -15,7 +16,7 @@ export const ReviewsSection: React.FC = () => {
   };
 
   return (
-    <section className="text-[var(--foreground)] py-16 px-6 relative">
+    <section className="text-[var(--foreground)] px-6 relative animate-fadeInUp">
       <div className="max-w-6xl mx-auto flex flex-col gap-10">
         <h2
           className="text-[32px] md:text-[45px]
@@ -50,35 +51,7 @@ export const ReviewsSection: React.FC = () => {
          [&::-webkit-scrollbar]:hidden"
         >
           {reviews.map((r, i) => (
-            <div
-              key={i}
-              className="
-                bg-black/70 text-[var(--foreground)] 
-                p-[13px] md:p-5
-                w-[200px] md:w-[288px]
-                h-[300px] md:h-[335px]
-                rounded-2xl shadow-lg border border-black/50 flex-shrink-0
-                flex flex-col gap-[9px]
-              "
-            >
-              <p className="text-sm md:text-md font-[Manrope-Bold] tracking-wider">
-                {r.author}
-              </p>
-              <p className="text-xs md:text-sm text-gray-500 font-[Manrope-Regular] tracking-wide">
-                {r.time}
-              </p>
-              <div className="flex items-center gap-2">
-                {[...Array(r.rating)].map((_, idx) => (
-                  <FaStar
-                    key={idx}
-                    className="text-[var(--color-brand-gold)]"
-                  />
-                ))}
-              </div>
-              <p className="text-xs md:text-sm lg:text-md font-[Manrope-Regular] tracking-wider leading-relaxed">
-                “{r.text}”
-              </p>
-            </div>
+            <ReviewCard key={i} review={r} />
           ))}
         </div>
 
