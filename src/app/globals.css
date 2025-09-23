@@ -84,4 +84,28 @@ button {
   color: #ff5722;
   font-weight: bold;
   font-size: 18px;
+  color: #0a0a0a;
 }
+
+
+
+@keyframes gradient-y {
+  0% {background-position: 50% 0%;}
+  50% {background-position: 50% 100%;}
+  100% {background-position: 50% 0%;}
+}
+
+.animate-gradient-y {
+  background-size: 100% 200%;
+  animation: gradient-y 25s ease infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.2); opacity: 0.3; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 15s ease-in-out infinite;
+}
+

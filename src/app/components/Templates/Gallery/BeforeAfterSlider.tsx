@@ -18,7 +18,9 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
   const rafRef = useRef<number | null>(null);
 
   const updatePosition = (clientX: number) => {
-    if (!containerRef.current) return;
+    if (!containerRef.current) {  
+      return;
+    };
     const rect = containerRef.current.getBoundingClientRect();
     const newPos = ((clientX - rect.left) / rect.width) * 100;
     setSliderPosition(Math.min(100, Math.max(0, newPos)));
