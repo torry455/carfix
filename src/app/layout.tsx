@@ -5,8 +5,9 @@ import { store } from "../lib/store";
 import { Header } from "./components/Organisms/Header/Header";
 import { Footer } from "./components/Organisms/Footer/Footer";
 import "./globals.css";
-import { ParallaxBalls } from "./components/Molecules/ParallaxBalls/ParallaxBalls";
+// import { ParallaxBalls } from "./components/Molecules/ParallaxBalls/ParallaxBalls";
 import { BurgerMenu } from "./components/Molecules/BurgerMenu/BurgerMenu";
+import { CarfixBackground } from "./components/Molecules/ParallaxBalls/CarfixBackground";
 
 export default function RootLayout({
   children,
@@ -17,7 +18,8 @@ export default function RootLayout({
     <Provider store={store}>
       <html lang="uk">
         <body className="relative text-[#E5E4E4] bg-black">
-          <ParallaxBalls />
+          {/* <ParallaxBalls /> */}
+          <CarfixBackground />
           <div className="relative max-w-6xl mx-auto">
             <Header />
             {children}

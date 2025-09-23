@@ -5,7 +5,7 @@ export const experts: Expert[] = [
     name: "Євгеній Кучер",
     title: "Дворазовий чемпіон України з PDR",
     bio: "10+ років досвіду у видаленні вм’ятин без фарбування. Засновник курсу \"PDR-Expert\", допомагає майстрам удосконалювати навички.",
-    img: "/img/masters/master1.jpg",
+    img: "https://res.cloudinary.com/dnti6czq4/image/upload/v1757590281/master1_cv4kkj.jpg",
     highlight: "Owner",
   },
   {

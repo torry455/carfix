@@ -2,12 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+
 import BeforeAfterSlider from "./BeforeAfterSlider";
 import { videoPairs } from "./VideoPairsOptiona";
 import { ArrowButton } from "../../Atoms/Buttons/ArrowButton";
 
 
-export const BeforeAfterSection: React.FC = () => {
+const Gallery: React.FC = () => {
   const [sliderPosition, setSliderPosition] = useState(50);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -36,26 +37,26 @@ export const BeforeAfterSection: React.FC = () => {
   return (
     <div
       id="gallery"
-      className="relative w-full max-w-6xl mx-auto select-none animate-fadeInUp"
+      className="relative w-full max-w-6xl mx-auto py-10 md:py-16 px-4 sm:px-6 lg:px-8 select-none"
     >
       {/* Заголовок */}
       <h2 className="text-[32px] md:text-[45px]
-                       font-[Manrope-ExtraBold] text-center pb-10 uppercase 
+                       font-[Manrope-ExtraBold] text-center py-10 uppercase 
                        tracking-wider text-[var(--color-brand-gold)]">
         Наше &quot;До та Після&quot;
       </h2>
 
       {/* Основний блок */}
-<div className="relative flex items-center gap-4 sm:gap-6 lg:gap-8">
-  <ArrowButton direction="left" onClickFn={prevSlide} />
-  <BeforeAfterSlider
-    before={before}
-    after={after}
-    sliderPosition={sliderPosition}
-    setSliderPosition={setSliderPosition}
-  />
-  <ArrowButton direction="right" onClickFn={nextSlide} />
-</div>
+      <div className="relative flex items-center gap-4 sm:gap-6 lg:gap-8">
+        <ArrowButton onClickFn={prevSlide} />
+        <BeforeAfterSlider
+          before={before}
+          after={after}
+          sliderPosition={sliderPosition}
+          setSliderPosition={setSliderPosition}
+        />
+        <ArrowButton onClickFn={nextSlide} />
+      </div>
 
       {/* Підписи */}
       <div className="flex justify-between mt-3 text-xs sm:text-sm md:text-base font-[Manrope-Bold] uppercase tracking-widest text-[#CFCFCF] max-w-[calc(100%-100px)] mx-auto">
@@ -74,3 +75,5 @@ export const BeforeAfterSection: React.FC = () => {
     </div>
   );
 };
+
+export default Gallery;
