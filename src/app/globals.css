@@ -99,6 +99,9 @@ button {
 .animate-fadeInUp {
   animation: fadeInUp 0.7s ease-out;
 }
+
+
+
 @keyframes gradient-y {
   0% {background-position: 50% 0%;}
   50% {background-position: 50% 100%;}
