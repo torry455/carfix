@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import BeforeAfterSlider from "./BeforeAfterSlider";
 import { videoPairs } from "./VideoPairsOptiona";
 import { ArrowButton } from "../../Atoms/Buttons/ArrowButton";
+import BeforeAfterSlider from "./BeforeAfterSlider";
 
 
 export const BeforeAfterSection: React.FC = () => {
