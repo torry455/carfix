@@ -28,8 +28,8 @@ export const BeforeAfterCard: React.FC<Props> = React.memo(function BeforeAfterC
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStartX === null) return;
     const diff = e.changedTouches[0].clientX - touchStartX;
-    if (diff > 30) onToggle(); // свайп вправо
-    else if (diff < -30) onToggle(); // свайп вліво
+    if (diff > 30) onToggle(); 
+    else if (diff < -30) onToggle(); 
     setTouchStartX(null);
   };
 
